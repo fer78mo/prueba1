@@ -1,0 +1,10 @@
+[
+  {
+    "archivo": "Test-A29.txt",
+    "motivo": "formato_invalido"
+  },
+  {
+    "archivo": "Test-A36.txt",
+    "motivo": "cita_no_encontrada"
+  }
+]

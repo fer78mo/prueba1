@@ -1,0 +1,14 @@
+[
+  {
+    "archivo": "MAD11.txt",
+    "motivo": "formato_invalido"
+  },
+  {
+    "archivo": "MAD113.txt",
+    "motivo": "cita_no_encontrada"
+  },
+  {
+    "archivo": "MAD114.txt",
+    "motivo": "formato_invalido"
+  }
+]

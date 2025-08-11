@@ -1,0 +1,860 @@
+{"ts": "2025-08-11T08:41:06.739333Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T08:41:06.740812Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 29, in ingest_all\n    alias = load_alias(alias_path)\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/io/alias_loader.py\", line 16, in load_alias\n    raise AliasMissingError(\"alias.txt vacío\")\napp.core.errors.AliasMissingError: alias.txt vacío"}
+{"ts": "2025-08-11T08:43:05.223421Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'data/preguntas/.gitkeep', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T08:43:05.223574Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt'}"}
+{"ts": "2025-08-11T08:43:05.223619Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'count': 2, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T09:13:34.635387Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:13:44.922731Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 57, in ingest_all\n    switch_alias(base, version)\n  File \"/app/app/vector/qdrant_store.py\", line 28, in switch_alias\n    qc.update_aliases(changes=ops)\n    ^^^^^^^^^^^^^^^^^\nAttributeError: 'QdrantClient' object has no attribute 'update_aliases'"}
+{"ts": "2025-08-11T09:15:18.994381Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt'}"}
+{"ts": "2025-08-11T09:15:18.994429Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'count': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:17:18.692394Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:17:28.539092Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 57, in ingest_all\n    switch_alias(base, version)\n  File \"/app/app/vector/qdrant_store.py\", line 32, in switch_alias\n    qc.create_alias(collection_name=physical, alias_name=alias)\n    ^^^^^^^^^^^^^^^\nAttributeError: 'QdrantClient' object has no attribute 'create_alias'"}
+{"ts": "2025-08-11T09:25:27.362508Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:25:37.020588Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:37.620011Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:38.882424Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:39.647937Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470151Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470210Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470327Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:25:45.283875Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:45.871355Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:46.957479Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:47.934704Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:48.766961Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:48.767055Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092542'}"}
+{"ts": "2025-08-11T09:26:22.961207Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:23.564061Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:24.710629Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:25.606632Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:26.433768Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:26.433869Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092620'}"}
+{"ts": "2025-08-11T09:33:16.367546Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:33:25.942650Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:26.537267Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:27.695539Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:28.619184Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.652970Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.653081Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.653342Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:33:39.040203Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:39.668898Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:40.736202Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:41.598130Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:42.578730Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:42.578817Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093336'}"}
+{"ts": "2025-08-11T09:35:34.977002Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:35:44.666893Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:45.341283Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:46.539063Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:47.481465Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488427Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488511Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488709Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:35:55.242310Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.8141701}"}
+{"ts": "2025-08-11T09:35:55.242388Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:38:56.071810Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:39:05.587918Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:06.264535Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:07.372192Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:08.468540Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:08.642142Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:09.313011Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:09.589345Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:09.589423Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:09.589645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:39:10.409592Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:11.214297Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:12.226344Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:12.226430Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:36.672547Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9440134167671204}"}
+{"ts": "2025-08-11T09:39:36.672609Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:39:53.908853Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': '/tmp/tmpq9e4mtln.txt', 'fuente': 'txt', 'conf': 0.7}"}
+{"ts": "2025-08-11T09:57:18.385798Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:57:28.210801Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:28.489009Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:28.830856Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.150115Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991017Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991101Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991295Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:02:19.384035Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:19.659156Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:20.003156Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:20.315836Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:21.143560Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:21.143655Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100216'}"}
+{"ts": "2025-08-11T10:03:33.099026Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:03:42.656542Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:42.931498Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:43.282072Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:43.576253Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425310Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425411Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425640Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:03:59.513855Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:03:59.513959Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:04:20.675948Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:20.951359Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:21.288855Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:21.599946Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:22.431488Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:22.431571Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:39.014768Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:04:39.014825Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:13:49.761966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:13:59.569550Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:13:59.843119Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:00.174039Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:00.465216Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335256Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335352Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335577Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:14:50.940442Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.210494Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.539155Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.834219Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:52.657830Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:52.657915Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_101448'}"}
+{"ts": "2025-08-11T10:15:23.011611Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:15:23.011670Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:32:32.158902Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:32:41.821514Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.088729Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.134357Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:42.402929Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.508279Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:42.701328Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.885202Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:43.174397Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:43.563825Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:43.563932Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:43.564188Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:32:44.011305Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:44.011388Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_103239'}"}
+{"ts": "2025-08-11T10:33:06.852622Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:33:06.852683Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:40:02.266805Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:40:11.776320Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.036374Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.356428Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.621855Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443076Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443175Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443420Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:45:15.464200Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:45:25.096282Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:25.381151Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:25.722656Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.029716Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859423Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859519Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859699Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:45:38.978471Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.245109Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.579517Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.881237Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:40.695293Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:40.695377Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104536'}"}
+{"ts": "2025-08-11T10:46:09.476617Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:46:09.476681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T11:03:39.991808Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:03:49.422654Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:49.689658Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:50.021002Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:50.328058Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.164746Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.164919Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.165838Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:12:53.607722Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:13:02.725769Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111253'}"}
+{"ts": "2025-08-11T11:13:02.726204Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:13:27.767898Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 18011}"}
+{"ts": "2025-08-11T11:13:35.136956Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_start', 'paths': ['/app/data/articulos', '/app/data/fuentes_pdf', '/app/data/preguntas']}"}
+{"ts": "2025-08-11T11:14:27.372870Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'created'}"}
+{"ts": "2025-08-11T11:14:29.603188Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111427'}"}
+{"ts": "2025-08-11T11:14:29.603968Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:14:29.616562Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111429'}"}
+{"ts": "2025-08-11T11:15:17.120324Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:15:17.135622Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111517'}"}
+{"ts": "2025-08-11T11:15:19.527234Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/lo.3-2018/articulo-051.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:15:19.543773Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111519'}"}
+{"ts": "2025-08-11T11:15:20.620305Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3500}"}
+{"ts": "2025-08-11T11:15:20.753024Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 132}"}
+{"ts": "2025-08-11T11:16:17.978022Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/alias.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:17.997384Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111617'}"}
+{"ts": "2025-08-11T11:16:20.378321Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/lo.3-2018/articulo-051.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:20.393278Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111620'}"}
+{"ts": "2025-08-11T11:16:21.490874Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3513}"}
+{"ts": "2025-08-11T11:16:21.628129Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 136}"}
+{"ts": "2025-08-11T11:16:36.178233Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:36.196753Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111636'}"}
+{"ts": "2025-08-11T11:23:27.467705Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/alias.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:23:27.487625Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112327'}"}
+{"ts": "2025-08-11T11:23:32.964300Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:23:42.102701Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112332'}"}
+{"ts": "2025-08-11T11:23:42.103254Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:23:42.590323Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112340'}"}
+{"ts": "2025-08-11T11:24:09.303384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 17214}"}
+{"ts": "2025-08-11T11:24:09.445884Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 142}"}
+{"ts": "2025-08-11T11:39:03.918341Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:39:13.103553Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_113903'}"}
+{"ts": "2025-08-11T11:39:13.104096Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:40:49.613092Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 18327}"}
+{"ts": "2025-08-11T11:40:49.747488Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 134}"}
+{"ts": "2025-08-11T11:41:33.608213Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3551}"}
+{"ts": "2025-08-11T11:41:33.750728Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 142}"}
+{"ts": "2025-08-11T11:41:33.891297Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 140}"}
+{"ts": "2025-08-11T11:41:34.029451Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 137}"}
+{"ts": "2025-08-11T11:41:34.166499Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 136}"}
+{"ts": "2025-08-11T11:41:34.309966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 143}"}
+{"ts": "2025-08-11T11:41:34.440487Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T11:41:34.573992Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T11:41:34.715130Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 140}"}
+{"ts": "2025-08-11T11:41:34.847146Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T11:41:34.977645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T11:41:35.116681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 138}"}
+{"ts": "2025-08-11T11:41:35.249672Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T11:41:35.389742Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 139}"}
+{"ts": "2025-08-11T11:41:35.532027Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 142}"}
+{"ts": "2025-08-11T11:41:35.665364Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 133}"}
+{"ts": "2025-08-11T11:41:35.790803Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T11:41:35.938017Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 147}"}
+{"ts": "2025-08-11T11:46:14.378590Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:46:23.250192Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_114614'}"}
+{"ts": "2025-08-11T11:46:23.250641Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:50:13.005539Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 17423}"}
+{"ts": "2025-08-11T11:50:13.150412Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 144}"}
+{"ts": "2025-08-11T11:50:13.307022Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 156}"}
+{"ts": "2025-08-11T11:50:13.433788Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 126}"}
+{"ts": "2025-08-11T11:50:13.573415Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 139}"}
+{"ts": "2025-08-11T11:50:13.711608Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 138}"}
+{"ts": "2025-08-11T11:50:13.848274Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 136}"}
+{"ts": "2025-08-11T11:50:13.998643Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 150}"}
+{"ts": "2025-08-11T11:50:14.140928Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 142}"}
+{"ts": "2025-08-11T11:50:14.270020Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 128}"}
+{"ts": "2025-08-11T11:50:14.403774Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T11:50:14.540359Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 136}"}
+{"ts": "2025-08-11T11:50:14.684768Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 144}"}
+{"ts": "2025-08-11T11:50:14.817868Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T11:50:14.963426Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 145}"}
+{"ts": "2025-08-11T11:50:15.094203Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 130}"}
+{"ts": "2025-08-11T11:50:15.229421Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 135}"}
+{"ts": "2025-08-11T11:50:15.367033Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 137}"}
+{"ts": "2025-08-11T12:45:50.553543Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_124548'}"}
+{"ts": "2025-08-11T12:45:59.178036Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3382}"}
+{"ts": "2025-08-11T12:45:59.314156Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 135}"}
+{"ts": "2025-08-11T12:45:59.451903Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 137}"}
+{"ts": "2025-08-11T12:45:59.582195Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 130}"}
+{"ts": "2025-08-11T12:45:59.709593Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 127}"}
+{"ts": "2025-08-11T12:45:59.851624Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 141}"}
+{"ts": "2025-08-11T12:45:59.981392Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:46:00.117291Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 135}"}
+{"ts": "2025-08-11T12:46:00.258416Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 140}"}
+{"ts": "2025-08-11T12:46:00.402858Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 144}"}
+{"ts": "2025-08-11T12:46:00.536056Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:46:00.672681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 136}"}
+{"ts": "2025-08-11T12:46:00.798693Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 125}"}
+{"ts": "2025-08-11T12:46:00.931672Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T12:46:01.077734Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 145}"}
+{"ts": "2025-08-11T12:46:01.216037Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 138}"}
+{"ts": "2025-08-11T12:46:01.341352Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T12:46:01.478226Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 136}"}
+{"ts": "2025-08-11T12:47:17.668427Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3448}"}
+{"ts": "2025-08-11T12:47:17.802172Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:17.946447Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 144}"}
+{"ts": "2025-08-11T12:47:18.081362Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 134}"}
+{"ts": "2025-08-11T12:47:18.216678Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 135}"}
+{"ts": "2025-08-11T12:47:18.350677Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:18.476922Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:18.610808Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:18.752058Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 141}"}
+{"ts": "2025-08-11T12:47:18.883664Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:19.009892Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:19.153615Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 143}"}
+{"ts": "2025-08-11T12:47:19.283014Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:19.408685Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 125}"}
+{"ts": "2025-08-11T12:47:19.541057Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 132}"}
+{"ts": "2025-08-11T12:47:19.667410Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:19.792954Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T12:47:19.923757Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 130}"}
+{"ts": "2025-08-11T12:47:55.580221Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 4053}"}
+{"ts": "2025-08-11T12:47:55.722408Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 141}"}
+{"ts": "2025-08-11T12:47:55.861429Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 138}"}
+{"ts": "2025-08-11T12:47:55.989165Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 127}"}
+{"ts": "2025-08-11T12:47:56.128975Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 139}"}
+{"ts": "2025-08-11T12:47:56.263775Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 134}"}
+{"ts": "2025-08-11T12:47:56.393119Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:56.524800Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:56.678939Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 153}"}
+{"ts": "2025-08-11T12:47:56.814145Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 135}"}
+{"ts": "2025-08-11T12:47:56.952849Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 138}"}
+{"ts": "2025-08-11T12:47:57.090639Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 137}"}
+{"ts": "2025-08-11T12:47:57.219109Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 128}"}
+{"ts": "2025-08-11T12:47:57.349874Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T12:47:57.481704Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:57.611304Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:57.741030Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:57.884654Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 143}"}
+{"ts": "2025-08-11T12:51:01.439331Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T12:51:01.571310Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T12:51:01.720608Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T12:51:01.854286Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T12:51:01.996428Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T12:51:02.142445Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.280731Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.280870Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T12:51:02.417421Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T12:51:02.563562Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.700981Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.844104Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T12:51:02.844294Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T12:51:02.999279Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:03.144074Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T12:51:03.289815Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T12:51:03.433894Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T12:51:03.570872Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T12:51:03.570921Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T18:51:22.797596Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T18:51:31.953114Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_185122'}"}
+{"ts": "2025-08-11T18:51:31.953681Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T18:54:28.639196Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T18:54:28.774407Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T18:54:28.927263Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T18:54:29.073280Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T18:54:29.220035Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T18:54:29.361174Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.512990Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.513185Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T18:54:29.647046Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T18:54:29.789821Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.922814Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:30.063325Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T18:54:30.063459Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T18:54:30.206441Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:30.354316Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T18:54:30.491131Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T18:54:30.644606Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T18:54:30.790522Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T18:54:30.790564Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T19:49:23.710127Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:49:34.101851Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_194923'}"}
+{"ts": "2025-08-11T19:49:34.102308Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:49:50.714230Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T19:49:50.856011Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T19:49:51.002501Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T19:49:51.142304Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T19:49:51.271406Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T19:49:51.419842Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.564008Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.564140Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T19:49:51.699614Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T19:49:51.837783Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.964677Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:52.098161Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T19:49:52.098270Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T19:49:52.232923Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:52.366928Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T19:49:52.511512Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T19:49:52.661785Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T19:49:52.801785Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T19:49:52.801835Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T19:50:48.549433Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:50:57.884695Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195048'}"}
+{"ts": "2025-08-11T19:50:57.885278Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:51:25.733074Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:51:34.828753Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195125'}"}
+{"ts": "2025-08-11T19:51:34.829355Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:51:50.540623Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T19:51:50.678186Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T19:51:50.814319Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T19:51:50.945384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T19:51:51.075604Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T19:51:51.213411Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.342172Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.473140Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T19:51:51.609322Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.739712Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.876815Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:52.018068Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T19:51:52.160966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T19:51:52.295923Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T19:51:52.433443Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T19:51:52.433490Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T19:55:24.693366Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:55:35.238720Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195524'}"}
+{"ts": "2025-08-11T19:55:35.239152Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:55:49.767412Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:55:59.031186Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195549'}"}
+{"ts": "2025-08-11T19:55:59.031784Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:57:16.629992Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:57:26.008226Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195716'}"}
+{"ts": "2025-08-11T19:57:26.008812Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:57:41.657606Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:57:50.655647Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195741'}"}
+{"ts": "2025-08-11T19:57:50.656168Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:58:55.179267Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:59:04.713935Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195855'}"}
+{"ts": "2025-08-11T19:59:04.714561Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T20:01:59.370212Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T20:02:08.854547Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_200159'}"}
+{"ts": "2025-08-11T20:02:08.854998Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T20:02:25.530680Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T20:02:25.677325Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T20:02:25.818363Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T20:02:25.958145Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T20:02:26.096859Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T20:02:26.242204Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.390948Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.533571Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T20:02:26.688781Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.835617Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.978966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:27.132645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T20:02:27.291879Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T20:02:27.433673Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T20:02:27.575111Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T20:02:27.575162Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T21:01:19.599286Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:01:29.884221Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_210119'}"}
+{"ts": "2025-08-11T21:01:29.884921Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:08:35.842250Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_210833'}"}
+{"ts": "2025-08-11T21:08:51.172222Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.194230Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD08.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.249764Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.265442Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD104.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.321925Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.337484Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD105.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.389036Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.404387Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD106.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.463178Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.478635Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD107.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.529475Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.545239Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD108.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.595484Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.610257Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD109.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.667938Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.682899Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD110.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.733024Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.747487Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD111.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.804943Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.827175Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD112.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.881403Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.895994Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD115.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.946628Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.961829Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD116.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.019655Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.035116Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD117.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.086462Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.101093Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD118.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.151606Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.166402Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'Test-C05.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.166446Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 0, 'moved_no_resueltas': 15}"}
+{"ts": "2025-08-11T21:21:55.834922Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:22:05.547315Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_212155'}"}
+{"ts": "2025-08-11T21:22:05.547906Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:22:08.170838Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 0, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T21:23:32.964656Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:23:33.098440Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:23:33.230741Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:23:33.365024Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:23:33.502828Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:23:33.644011Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:23:33.782974Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:33.783137Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:23:33.916589Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:23:34.060258Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.190614Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.323275Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:23:34.323422Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:23:34.471473Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.607565Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:23:34.744148Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:23:34.882575Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:23:35.012243Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:23:35.012299Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T21:38:41.230158Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:38:50.913352Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_213841'}"}
+{"ts": "2025-08-11T21:38:50.913798Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:40:05.608745Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_214003'}"}
+{"ts": "2025-08-11T21:41:36.550955Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:41:36.685338Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:41:36.822578Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:41:36.969923Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:41:37.108956Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:41:37.251723Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:41:37.387807Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:41:37.387978Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:41:37.523933Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:41:37.668707Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:41:37.810295Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:41:37.950081Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:41:37.950206Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:41:38.092441Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:41:38.230578Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:41:38.363172Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:41:38.509915Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:41:38.639310Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:41:38.639366Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T21:44:44.200508Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:44:55.016469Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_214449'}"}
+{"ts": "2025-08-11T21:44:55.034089Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_214444'}"}
+{"ts": "2025-08-11T21:44:55.034608Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:45:43.091705Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:45:43.226422Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:45:43.372950Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:45:43.510699Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:45:43.645603Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:45:43.790889Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:45:43.919597Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:45:44.049194Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T21:45:44.193222Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:45:44.325083Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:45:44.455201Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:45:44.598419Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:45:44.738254Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:45:44.877426Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:45:45.015286Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:45:45.154890Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:45:45.298274Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:45:45.441547Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:45:45.441607Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 17, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T21:46:17.430419Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:46:17.579540Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:46:17.718637Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:46:17.861799Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:46:17.996402Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:46:18.127122Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:46:18.264036Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:46:18.396132Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T21:46:18.537934Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:46:18.674379Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:46:18.825174Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:46:18.968316Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:46:19.099462Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:46:19.226340Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:46:19.368170Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:46:19.500823Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:46:19.642206Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:46:19.780731Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:46:19.780779Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 17, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T21:50:01.515566Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:50:01.674937Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:50:01.812277Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:50:01.956807Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:50:02.100292Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:50:02.245603Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:50:02.382753Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:50:02.521737Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T21:50:02.677852Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:50:02.814248Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:50:02.948138Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:50:03.099298Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:50:03.246719Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:50:03.384037Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:50:03.529627Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:50:03.667428Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:50:03.802159Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:50:03.949258Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:50:03.949313Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 17, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T22:13:31.176597Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:13:41.887683Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_221331'}"}
+{"ts": "2025-08-11T22:13:41.888277Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:13:47.224686Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_221344'}"}
+{"ts": "2025-08-11T22:14:27.438099Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T22:14:27.572314Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T22:14:27.717328Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T22:14:27.856819Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T22:14:28.000023Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T22:14:28.144662Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T22:14:28.281735Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:28.416847Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T22:14:28.554107Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T22:14:28.697755Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:28.827834Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:28.973744Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:14:29.116291Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:29.251071Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:29.396335Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T22:14:29.532961Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T22:14:29.665290Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T22:14:29.803171Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T22:14:29.803231Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 17, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T22:14:51.366960Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T22:14:51.507683Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T22:14:51.656821Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T22:14:51.790108Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T22:14:51.932504Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T22:14:52.084749Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T22:14:52.232700Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:52.369948Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T22:14:52.516062Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T22:14:52.658850Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:52.787468Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:52.939235Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:14:53.071900Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:53.203758Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:14:53.340908Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T22:14:53.476782Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T22:14:53.607135Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T22:14:53.745456Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T22:14:53.745504Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 17, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T22:19:01.108334Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:19:11.655229Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_221901'}"}
+{"ts": "2025-08-11T22:19:11.655727Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:25:47.894150Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:25:58.198127Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_222547'}"}
+{"ts": "2025-08-11T22:25:58.198559Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:28:02.208059Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:28:11.784367Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_222802'}"}
+{"ts": "2025-08-11T22:28:11.784809Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:28:13.505707Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_222811'}"}
+{"ts": "2025-08-11T22:28:53.868018Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T22:28:54.013500Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T22:28:54.148044Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T22:28:54.282057Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T22:28:54.414663Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T22:28:54.559622Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T22:28:54.703384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:28:54.835708Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD11.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9985565543174744}"}
+{"ts": "2025-08-11T22:28:54.985829Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T22:28:55.119551Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:28:55.260594Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:28:55.406317Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD113.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9981270432472229}"}
+{"ts": "2025-08-11T22:28:55.549929Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD114.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:28:55.686778Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:28:55.833976Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T22:28:55.968621Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T22:28:56.114014Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T22:28:56.258131Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T22:28:56.258189Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 18, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T22:39:34.591068Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:39:44.652174Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_223934'}"}
+{"ts": "2025-08-11T22:39:44.652647Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:40:06.564976Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD08.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:07.274678Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD104.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:07.979327Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD105.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:08.691611Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD106.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:08.830321Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD107.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:40:09.092802Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD108.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:40:09.787647Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD109.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:09.787746Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T22:40:10.441412Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD110.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:11.139283Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD111.txt', 'etiqueta': 'A', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:11.813184Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD112.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:12.528951Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD113.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:40:12.529038Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T22:40:13.220805Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD115.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:13.913033Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD116.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:14.620431Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD117.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:14.902410Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD118.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:40:15.589383Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:40:15.589507Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 13, 'csv': '/app/output/validate/validate_20250811_223947.csv'}"}
+{"ts": "2025-08-11T22:43:58.747162Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:43:58.883877Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD73.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:43:59.575577Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:00.277685Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:00.954724Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:01.093075Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'MAD77.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T22:44:01.773924Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:02.458799Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:03.116667Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:03.801729Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:04.485159Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:44:05.189725Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:05.874290Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:44:05.874408Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 11, 'csv': '/app/output/validate/validate_20250811_224353.csv'}"}
+{"ts": "2025-08-11T22:53:18.492824Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T22:53:28.676741Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_225318'}"}
+{"ts": "2025-08-11T22:53:28.677165Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T22:53:54.246164Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD72.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9153518080711365}"}
+{"ts": "2025-08-11T22:53:54.377040Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD73.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9880663156509399}"}
+{"ts": "2025-08-11T22:53:54.524864Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD74.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998229146003723}"}
+{"ts": "2025-08-11T22:53:54.669563Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD75.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T22:53:54.795136Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD76.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9996938705444336}"}
+{"ts": "2025-08-11T22:53:54.935943Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD77.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999130964279175}"}
+{"ts": "2025-08-11T22:53:55.084610Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD78.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9410930275917053}"}
+{"ts": "2025-08-11T22:53:55.219369Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD79.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999362230300903}"}
+{"ts": "2025-08-11T22:53:55.362984Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD80.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999061822891235}"}
+{"ts": "2025-08-11T22:53:55.495940Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD81.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9956325888633728}"}
+{"ts": "2025-08-11T22:53:55.624011Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD82.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9836474061012268}"}
+{"ts": "2025-08-11T22:53:55.760363Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD83.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9995139837265015}"}
+{"ts": "2025-08-11T22:53:55.891446Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T22:53:55.891499Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 13, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T22:54:41.060816Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:41.751193Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:54:42.419729Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:43.099687Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:43.767641Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:44.448981Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:45.104327Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:45.767051Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:46.413037Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:47.085527Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:47.738660Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:54:48.427945Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:49.095208Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:54:49.095338Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 13, 'csv': '/app/output/validate/validate_20250811_225436.csv'}"}
+{"ts": "2025-08-11T22:55:22.429834Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:23.124921Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:55:23.820069Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:24.506991Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:25.157615Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:25.847506Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:26.525604Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:27.219339Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:27.892013Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:28.555705Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:29.228010Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:55:29.937363Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:30.629556Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:30.629688Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 13, 'csv': '/app/output/validate/validate_20250811_225518.csv'}"}
+{"ts": "2025-08-11T22:55:53.366993Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:54.055385Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:55:54.762422Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:55.454638Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:56.102438Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:56.784470Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:57.455689Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:58.151473Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:58.829353Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:55:59.524111Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:00.193908Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:00.882663Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:01.556814Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:01.556940Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 13, 'csv': '/app/output/validate/validate_20250811_225549.csv'}"}
+{"ts": "2025-08-11T22:56:31.792365Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:32.468458Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:33.129536Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:33.799536Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:34.436729Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:35.105721Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:35.779852Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:36.461622Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:37.114629Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:37.781299Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:38.458100Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:39.136119Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:39.823601Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A25.txt', 'etiqueta': 'C', 'modelo': 'C', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:40.546731Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A26.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:41.240057Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A27.txt', 'etiqueta': 'B', 'modelo': 'B', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:41.779392Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A28.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:41.779485Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'Test-A29.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T22:56:42.482683Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A30.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:43.171279Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A31.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:43.856261Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A32.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:44.553832Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A33.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:45.255921Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A34.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:45.941038Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A35.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:46.635221Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A36.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'etiqueta_sin_cita'}"}
+{"ts": "2025-08-11T22:56:47.343219Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A37.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:48.030649Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A38.txt', 'etiqueta': 'A', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:48.710299Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A39.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:49.383939Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A40.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:50.063377Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A41.txt', 'etiqueta': 'C', 'modelo': 'C', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:56:50.733713Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A42.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:51.420002Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A43.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:52.106936Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:56:52.107147Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 31, 'csv': '/app/output/validate/validate_20250811_225627.csv'}"}
+{"ts": "2025-08-11T22:58:17.810867Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:18.509275Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:19.202203Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:19.881080Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:20.569697Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:21.255845Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:22.004232Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:22.707597Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:23.385852Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:24.099167Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:24.779472Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:25.491432Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:26.201905Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A25.txt', 'etiqueta': 'C', 'modelo': 'C', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:26.915143Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A26.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:27.621233Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A27.txt', 'etiqueta': 'B', 'modelo': 'B', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:28.142945Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A28.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:28.143047Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'Test-A29.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T22:58:28.857058Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A30.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:29.560256Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A31.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:30.291522Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A32.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:31.005152Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A33.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:31.725866Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A34.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:32.418848Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A35.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:33.145883Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A36.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'etiqueta_sin_cita'}"}
+{"ts": "2025-08-11T22:58:33.889483Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A37.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:34.551958Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A38.txt', 'etiqueta': 'A', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:35.231176Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A39.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:35.914961Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A40.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:36.628665Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A41.txt', 'etiqueta': 'C', 'modelo': 'C', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:37.338129Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A42.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:38.096969Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A43.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:38.798229Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-C05.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:38.798372Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 31, 'csv': '/app/output/validate/validate_20250811_225813.csv'}"}
+{"ts": "2025-08-11T22:58:55.835737Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:56.592052Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T22:58:57.345963Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:58.062740Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:58.713690Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:58:59.432961Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:59:00.143957Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:59:00.866252Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:59:01.560730Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:59:02.251217Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T22:59:02.251555Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'ok': 10, 'csv': '/app/output/validate/validate_20250811_225851.csv'}"}
+{"ts": "2025-08-11T23:06:15.556295Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T23:06:24.848731Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_230615'}"}
+{"ts": "2025-08-11T23:06:24.849168Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T23:06:26.222604Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_230624'}"}
+{"ts": "2025-08-11T23:06:48.994078Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD72.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9153518080711365}"}
+{"ts": "2025-08-11T23:06:49.132854Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD73.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9880663156509399}"}
+{"ts": "2025-08-11T23:06:49.276499Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD74.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998229146003723}"}
+{"ts": "2025-08-11T23:06:49.418609Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD75.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:49.544501Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD76.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9996938705444336}"}
+{"ts": "2025-08-11T23:06:49.692272Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD77.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999130964279175}"}
+{"ts": "2025-08-11T23:06:49.825256Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD78.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9410930275917053}"}
+{"ts": "2025-08-11T23:06:49.966854Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD79.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999362230300903}"}
+{"ts": "2025-08-11T23:06:50.111919Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD80.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9999061822891235}"}
+{"ts": "2025-08-11T23:06:50.250769Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD81.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9956325888633728}"}
+{"ts": "2025-08-11T23:06:50.404840Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD82.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9836474061012268}"}
+{"ts": "2025-08-11T23:06:50.558785Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD83.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9995139837265015}"}
+{"ts": "2025-08-11T23:06:50.709308Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A25.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998294115066528}"}
+{"ts": "2025-08-11T23:06:50.848612Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A26.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:50.989658Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A27.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9996742010116577}"}
+{"ts": "2025-08-11T23:06:51.101455Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A28.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9930970072746277}"}
+{"ts": "2025-08-11T23:06:51.101619Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'Test-A29.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T23:06:51.237593Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A30.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:51.382519Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A31.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:51.516384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A32.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998204112052917}"}
+{"ts": "2025-08-11T23:06:51.666433Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A33.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T23:06:51.816387Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A34.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9994416832923889}"}
+{"ts": "2025-08-11T23:06:51.959590Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A35.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:52.108883Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'Test-A36.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T23:06:52.259601Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A37.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9987565279006958}"}
+{"ts": "2025-08-11T23:06:52.406117Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A38.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T23:06:52.546556Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A39.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998490810394287}"}
+{"ts": "2025-08-11T23:06:52.695370Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A40.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9994871616363525}"}
+{"ts": "2025-08-11T23:06:52.833743Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A41.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9816330671310425}"}
+{"ts": "2025-08-11T23:06:52.961533Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A42.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9994558691978455}"}
+{"ts": "2025-08-11T23:06:53.102918Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-A43.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9998853206634521}"}
+{"ts": "2025-08-11T23:06:53.239395Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'correcta', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T23:06:53.239461Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 30, 'moved_no_resueltas': 2}"}
+{"ts": "2025-08-11T23:07:39.995198Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD72.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:40.692204Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD73.txt', 'etiqueta': 'D', 'modelo': 'D', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:41.392704Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD74.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:42.079593Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD75.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:42.731631Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD76.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:43.427679Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD77.txt', 'etiqueta': 'D', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:44.117670Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD78.txt', 'etiqueta': 'C', 'modelo': 'B', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:44.826470Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD79.txt', 'etiqueta': 'C', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:45.532035Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD80.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:46.221028Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD81.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:46.917688Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD82.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:47.605688Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'MAD83.txt', 'etiqueta': 'B', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:48.293193Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A25.txt', 'etiqueta': 'C', 'modelo': 'C', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:48.979958Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A26.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:49.691201Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A27.txt', 'etiqueta': 'B', 'modelo': 'B', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:50.199683Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A28.txt', 'etiqueta': 'A', 'modelo': 'A', 'acuerdo': True, 'motivo': 'ok'}"}
+{"ts": "2025-08-11T23:07:50.199788Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'validate_skip', 'file': 'Test-A29.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T23:07:50.900733Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A30.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:51.590629Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A31.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:52.286637Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_item', 'file': 'Test-A32.txt', 'etiqueta': 'D', 'modelo': 'A', 'acuerdo': False, 'motivo': 'desacuerdo'}"}
+{"ts": "2025-08-11T23:07:52.286775Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'validate_done', 'total': 19, 'acuerdos': 6, 'accuracy': 0.3158, 'por_motivo': {'desacuerdo': 13, 'ok': 6}, 'csv': '/app/output/validate/validate_20250811_230735.csv'}"}

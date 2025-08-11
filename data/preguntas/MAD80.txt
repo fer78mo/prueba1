@@ -1,0 +1,8 @@
+De conformidad con lo dispuesto en el artículo 4.11 del Reglamento (UE) 2016/679, se entiende por consentimiento del afectado toda manifestación de voluntad libre, específica, informada e inequívoca por la que este acepta:
+
+A) Mediante una probable acción afirmativa, el tratamiento de datos personales que le conciernen.
+B) Necesariamente mediante una declaración, el tratamiento de datos personales que le conciernen.
+C) Mediante una declaración o una probable acción afirmativa, el tratamiento de datos personales que le conciernen.
+D) Ya sea mediante una declaración o una clara acción afirmativa, el tratamiento de datos personales que le conciernen.
+
+✅ Respuesta correcta: D)

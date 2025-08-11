@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "total": 2,
+    "por_fuente": {
+      "txt": 2
+    },
+    "citas": {
+      "con_cita": 2
+    },
+    "confianza_media": 0.9994,
+    "ts": 1754910981
+  },
+  "items": [
+    {
+      "archivo": "MAD08.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 192,
+      "confianza": 0.9998132586479187,
+      "tiempo_ms": 3513
+    },
+    {
+      "archivo": "Test-C05.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 240,
+      "confianza": 0.9989913105964661,
+      "tiempo_ms": 136
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+archivo,ok,motivo,fuente,tiene_cita,span_len,confianza,tiempo_ms
+Test-C05.txt,True,,txt,True,240,0.9989913105964661,18011

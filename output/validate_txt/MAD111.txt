@@ -1,0 +1,20 @@
+Respecto a la pregunta anterior, cuánto tiempo podrá prorrogarse dicho plazo en caso necesario, teniendo en cuenta la complejidad y el número de solicitudes:
+
+A) Dos meses.
+B) Un mes.
+C) Veinte días.
+D) Quince días.
+
+Etiqueta: A) | Modelo: B)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«c) Si el plazo se fija en meses o años, concluirá el mismo día en que se produjo el hecho que determina su iniciación en el mes o el año de vencimiento.» (Disposición adicional 3, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (etiqueta, preview):
+   …vos. b) Si el plazo se fija en semanas, concluirá el mismo día de la semana en que se produjo el hecho que determina su iniciación en la semana de vencimiento. [[c) Si el plazo se fija en meses o años, concluirá el mismo día en que se produjo el hecho que determina su iniciación en el mes o el año de vencimiento.]] Si en el mes de vencimiento no hubiera día equivalente a aquel en que comienza el cómputo, se entenderá que el plazo expira el último día del mes. d) Cuando …
+
+— Justificación (según modelo):
+«En todo caso, en el ámbito de la Administración de la Junta de Andalucía y sus entidades instrumentales, el plazo máximo para dictar y notificar la resolución será de 20 días hábiles desde la recepción de la solicitud por el órgano competente para resolver, prorrogables por igual período en el caso de que el volumen o la complejidad de la información solicitada lo requiera.» (Artículo 32, Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía.)
+
+   · Fragmento (modelo, preview):
+   Artículo 32. Plazo de resolución y notificación. Las solicitudes deberán resolverse y notificarse en el menor plazo posible. [[En todo caso, en el ámbito de la Administración de la Junta de Andalucía y sus entidades instrumentales, el plazo máximo para dictar y notificar la resolución será de 20 días hábiles desde la recepción de la solicitud por el órgano competente para resolver, prorrogables por igual período en el caso de que el volumen o la complejidad de la información solicitada lo requiera.]] Dicha ampliación será notificada a la persona solicitante.

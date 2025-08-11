@@ -1,0 +1,19 @@
+La Agencia Española de Protección de Datos se rige:
+
+OPCIONES:
+A) Por lo dispuesto en el Reglamento (UE) 2016/679, la Ley Orgánica 3/2018, de 5 de diciembre, y sus disposiciones de desarrollo y por la legislación especial de los sectores económicos sometidos a su supervisión.
+B) Por su Ley de creación, sus estatutos y la legislación especial de los sectores económicos sometidos a su supervisión.
+C) Por lo dispuesto en el Reglamento (UE) 2016/679, la Ley Orgánica 3/2018, de 5 de diciembre, y sus disposiciones de desarrollo.
+D) Por las normas citadas en el artículo 110.1 de la Ley 40/2015, de 1 de octubre, de régimen jurídico del sector público.
+
+✅ Respuesta correcta: C)
+
+JUSTIFICACIÓN:
+
+✅ Respuesta correcta según el modelo: C)
+
+«La Agencia Española de Protección de Datos se rige por lo dispuesto en el Reglamento (UE) 2016/679, la presente ley orgánica y sus disposiciones de desarrollo.» (Artículo 45, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+---
+Fragmento con resaltado (preview):
+Artículo 45. Régimen jurídico. 1. [[La Agencia Española de Protección de Datos se rige por lo dispuesto en el Reglamento (UE) 2016/679, la presente ley orgánica y sus disposiciones de desarrollo.]] Supletoriamente, en cuanto sea compatible con su plena independencia y sin perjuicio de lo previsto en el artículo 63.2 de esta ley orgánica, se regirá por l…

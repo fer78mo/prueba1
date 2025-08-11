@@ -1,0 +1,19 @@
+Respecto a la pregunta anterior, cuánto tiempo podrá prorrogarse dicho plazo en caso necesario, teniendo en cuenta la complejidad y el número de solicitudes:
+
+OPCIONES:
+A) Dos meses.
+B) Un mes.
+C) Veinte días.
+D) Quince días.
+
+✅ Respuesta correcta: A)
+
+JUSTIFICACIÓN:
+
+✅ Respuesta correcta según el modelo: A)
+
+«c) Si el plazo se fija en meses o años, concluirá el mismo día en que se produjo el hecho que determina su iniciación en el mes o el año de vencimiento.» (Disposición adicional 3, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+---
+Fragmento con resaltado (preview):
+…vos. b) Si el plazo se fija en semanas, concluirá el mismo día de la semana en que se produjo el hecho que determina su iniciación en la semana de vencimiento. [[c) Si el plazo se fija en meses o años, concluirá el mismo día en que se produjo el hecho que determina su iniciación en el mes o el año de vencimiento.]] Si en el mes de vencimiento no hubiera día equivalente a aquel en que comienza el cómputo, se entenderá que el plazo expira el último día del mes. d) Cuando …

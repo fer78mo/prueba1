@@ -1,0 +1,14 @@
+archivo,etiqueta,modelo,acuerdo,motivo
+MAD08.txt,C,A,False,desacuerdo
+MAD104.txt,B,A,False,desacuerdo
+MAD105.txt,D,A,False,desacuerdo
+MAD106.txt,B,A,False,desacuerdo
+MAD109.txt,B,A,False,desacuerdo
+MAD110.txt,C,A,False,desacuerdo
+MAD111.txt,A,B,False,desacuerdo
+MAD112.txt,B,A,False,desacuerdo
+MAD113.txt,D,D,True,ok
+MAD115.txt,B,A,False,desacuerdo
+MAD116.txt,C,A,False,desacuerdo
+MAD117.txt,D,A,False,desacuerdo
+Test-C05.txt,D,A,False,desacuerdo

@@ -1,0 +1,197 @@
+{
+  "summary": {
+    "total": 18,
+    "por_fuente": {
+      "txt": 17,
+      "?": 1
+    },
+    "citas": {
+      "con_cita": 17,
+      "sin_cita": 1
+    },
+    "confianza_media": 0.8834,
+    "ts": 1754916477
+  },
+  "items": [
+    {
+      "archivo": "MAD08.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 192,
+      "confianza": 0.9998132586479187,
+      "tiempo_ms": 4053
+    },
+    {
+      "archivo": "MAD104.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 417,
+      "confianza": 0.9995816349983215,
+      "tiempo_ms": 141
+    },
+    {
+      "archivo": "MAD105.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 117,
+      "confianza": 0.9994019269943237,
+      "tiempo_ms": 138
+    },
+    {
+      "archivo": "MAD106.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 224,
+      "confianza": 0.9999659061431885,
+      "tiempo_ms": 127
+    },
+    {
+      "archivo": "MAD107.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 121,
+      "confianza": 0.9978300929069519,
+      "tiempo_ms": 139
+    },
+    {
+      "archivo": "MAD108.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 370,
+      "confianza": 0.72,
+      "tiempo_ms": 134
+    },
+    {
+      "archivo": "MAD109.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 224,
+      "confianza": 0.72,
+      "tiempo_ms": 129
+    },
+    {
+      "archivo": "MAD11.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 442,
+      "confianza": 0.72,
+      "tiempo_ms": 131
+    },
+    {
+      "archivo": "MAD110.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 159,
+      "confianza": 0.9923223853111267,
+      "tiempo_ms": 153
+    },
+    {
+      "archivo": "MAD111.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 152,
+      "confianza": 0.72,
+      "tiempo_ms": 135
+    },
+    {
+      "archivo": "MAD112.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 365,
+      "confianza": 0.72,
+      "tiempo_ms": 138
+    },
+    {
+      "archivo": "MAD113.txt",
+      "ok": false,
+      "motivo": "cita_no_encontrada",
+      "fuente": "?",
+      "tiene_cita": false,
+      "span_len": null,
+      "confianza": 0.0,
+      "tiempo_ms": 137
+    },
+    {
+      "archivo": "MAD114.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 247,
+      "confianza": 0.72,
+      "tiempo_ms": 128
+    },
+    {
+      "archivo": "MAD115.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 283,
+      "confianza": 0.72,
+      "tiempo_ms": 130
+    },
+    {
+      "archivo": "MAD116.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 174,
+      "confianza": 0.9938876032829285,
+      "tiempo_ms": 131
+    },
+    {
+      "archivo": "MAD117.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 240,
+      "confianza": 0.999955415725708,
+      "tiempo_ms": 129
+    },
+    {
+      "archivo": "MAD118.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 409,
+      "confianza": 0.995389461517334,
+      "tiempo_ms": 129
+    },
+    {
+      "archivo": "Test-C05.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 240,
+      "confianza": 0.9989913105964661,
+      "tiempo_ms": 143
+    }
+  ]
+}

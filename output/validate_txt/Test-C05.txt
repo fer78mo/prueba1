@@ -1,0 +1,20 @@
+Son principios básicos regulados en el artículo 6 de la Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía:
+
+A) Principio de transparencia, en cuya virtud las entidades sujetas a lo dispuesto en la presente ley son responsables del cumplimiento de sus prescripciones.
+B) Principio de no discriminación tecnológica, en cuya virtud la información se facilitará de la forma que resulte más simple e inteligible atendiendo a la naturaleza de la misma y a las necesidades de las personas con circunstancias especiales que les dificulten el ejercicio del derecho.
+C) Principio de accesibilidad, por el que se proporcionará información con vistas a facilitar la identificación de los datos personales solicitados y búsqueda de la información.
+D) Principio de reutilización, en cuya virtud se fomentará que la información sea publicada en formatos que permitan su reutilización de acuerdo con la legislación aplicable en materia de reutilización de la información del sector público.
+
+Etiqueta: D) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«k) Principio de reutilización, en cuya virtud se fomentará que la información sea publicada en formatos que permitan su reutilización, de acuerdo con la legislación aplicable en materia de reutilización de la información del sector público.» (Artículo 6, Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía.)
+
+   · Fragmento (etiqueta, preview):
+   … búsqueda de la información. j) Principio de interoperabilidad, en cuya virtud la información será publicada conforme al Esquema Nacional de Interoperabilidad. [[k) Principio de reutilización, en cuya virtud se fomentará que la información sea publicada en formatos que permitan su reutilización, de acuerdo con la legislación aplicable en materia de reutilización de la información del sector público.]]
+
+— Justificación (según modelo):
+«c) Principio de responsabilidad, en cuya virtud las entidades sujetas a lo dispuesto en la presente ley son responsables del cumplimiento de sus prescripciones.» (Artículo 6, Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía.)
+
+   · Fragmento (modelo, preview):
+   …acuerdo con la Ley. b) Principio de libre acceso a la información pública, en cuya virtud cualquier persona puede solicitar el acceso a la información pública. [[c) Principio de responsabilidad, en cuya virtud las entidades sujetas a lo dispuesto en la presente ley son responsables del cumplimiento de sus prescripciones.]] d) Principio de no discriminación tecnológica, en cuya virtud las entidades sujetas al ámbito de aplicación de la presente ley habrán de arbitrar los medios …

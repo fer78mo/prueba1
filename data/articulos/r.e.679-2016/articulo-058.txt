@@ -1,0 +1,65 @@
+Artículo 58. Poderes.
+
+1. Cada autoridad de control dispondrá de todos los poderes de investigación indicados a continuación:
+
+a) ordenar al responsable y al encargado del tratamiento y, en su caso, al representante del responsable o del encargado, que faciliten cualquier información que requiera para el desempeño de sus funciones;
+
+b) llevar a cabo investigaciones en forma de auditorías de protección de datos;
+
+c) llevar a cabo una revisión de las certificaciones expedidas en virtud del artículo 42, apartado 7;
+
+d) notificar al responsable o al encargado del tratamiento las presuntas infracciones del presente Reglamento;
+
+e) obtener del responsable y del encargado del tratamiento el acceso a todos los datos personales y a toda la información necesaria para el ejercicio de sus funciones;
+
+f) obtener el acceso a todos los locales del responsable y del encargado del tratamiento, incluidos cualesquiera equipos y medios de tratamiento de datos, de conformidad con el Derecho procesal de la Unión o de los Estados miembros.
+
+2. Cada autoridad de control dispondrá de todos los siguientes poderes correctivos indicados a continuación:
+
+a) sancionar a todo responsable o encargado del tratamiento con una advertencia cuando las operaciones de tratamiento previstas puedan infringir lo dispuesto en el presente Reglamento;
+
+b) sancionar a todo responsable o encargado del tratamiento con apercibimiento cuando las operaciones de tratamiento hayan infringido lo dispuesto en el presente Reglamento;
+
+c) ordenar al responsable o encargado del tratamiento que atiendan las solicitudes de ejercicio de los derechos del interesado en virtud del presente Reglamento;
+
+d) ordenar al responsable o encargado del tratamiento que las operaciones de tratamiento se ajusten a las disposiciones del presente Reglamento, cuando proceda, de una determinada manera y dentro de un plazo especificado;
+
+e) ordenar al responsable del tratamiento que comunique al interesado las violaciones de la seguridad de los datos personales;
+
+f) imponer una limitación temporal o definitiva del tratamiento, incluida su prohibición;
+
+g) ordenar la rectificación o supresión de datos personales o la limitación de tratamiento con arreglo a los artículos 16, 17 y 18 y la notificación de dichas medidas a los destinatarios a quienes se hayan comunicado datos personales con arreglo a al artículo 17, apartado 2, y al artículo 19;
+
+h) retirar una certificación u ordenar al organismo de certificación que retire una certificación emitida con arreglo a los artículos 42 y 43, u ordenar al organismo de certificación que no se emita una certificación si no se cumplen o dejan de cumplirse los requisitos para la certificación;
+
+i) imponer una multa administrativa con arreglo al artículo 83, además o en lugar de las medidas mencionadas en el presente apartado, según las circunstancias de cada caso particular;
+
+j) ordenar la suspensión de los flujos de datos hacia un destinatario situado en un tercer país o hacia una organización internacional.
+
+3. Cada autoridad de control dispondrá de todos los poderes de autorización y consultivos indicados a continuación:
+
+a) asesorar al responsable del tratamiento conforme al procedimiento de consulta previa contemplado en el artículo 36;
+
+b) emitir, por iniciativa propia o previa solicitud, dictámenes destinados al Parlamento nacional, al Gobierno del Estado miembro o, con arreglo al Derecho de los Estados miembros, a otras instituciones y organismos, así como al público, sobre cualquier asunto relacionado con la protección de los datos personales;
+
+c) autorizar el tratamiento a que se refiere el artículo 36, apartado 5, si el Derecho del Estado miembro requiere tal autorización previa;
+
+d) emitir un dictamen y aprobar proyectos de códigos de conducta de conformidad con lo dispuesto en el artículo 40, apartado 5;
+
+e) acreditar los organismos de certificación con arreglo al artículo 43;
+
+f) expedir certificaciones y aprobar criterios de certificación con arreglo al artículo 42, apartado 5;
+
+g) adoptar las cláusulas tipo de protección de datos contempladas en el artículo 28, apartado 8, y el artículo 46, apartado 2, letra d);
+
+h) autorizar las cláusulas contractuales indicadas en el artículo 46, apartado 3, letra a);
+
+i) autorizar los acuerdos administrativos contemplados en el artículo 46, apartado 3, letra b);
+
+j) aprobar normas corporativas vinculantes de conformidad con lo dispuesto en el artículo 47.
+
+4. El ejercicio de los poderes conferidos a la autoridad de control en virtud del presente artículo estará sujeto a las garantías adecuadas, incluida la tutela judicial efectiva y al respeto de las garantías procesales, establecidas en el Derecho de la Unión y de los Estados miembros de conformidad con la Carta.
+
+5. Cada Estado miembro dispondrá por ley que su autoridad de control esté facultada para poner en conocimiento de las autoridades judiciales las infracciones del presente Reglamento y, si procede, para iniciar o ejercitar de otro modo acciones judiciales, con el fin de hacer cumplir lo dispuesto en el mismo.
+
+6. Cada Estado miembro podrá establecer por ley que su autoridad de control tenga otros poderes además de los indicadas en los apartados 1, 2 y 3. El ejercicio de dichos poderes no será obstáculo a la aplicación efectiva del capítulo VII.

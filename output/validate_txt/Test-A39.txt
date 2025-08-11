@@ -1,0 +1,28 @@
+Respecto a las condiciones aplicables al consentimiento del niño en relación con los servicios de la sociedad de la información, los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a:
+
+A) 13 años.
+B) 12 años.
+C) 11 años.
+D) 10 años.
+
+Etiqueta: A) | Modelo: A)  →  OK (coinciden)
+
+— Justificación (según etiqueta):
+«Los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a 13 años.» (Artículo 8, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (etiqueta, preview):
+   …nsiderará lícito si el consentimiento lo dio o autorizó el titular de la patria potestad o tutela sobre el niño, y solo en la medida en que se dio o autorizó.
+
+[[Los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a 13 años.]]
+
+2. El responsable del tratamiento hará esfuerzos razonables para verificar en tales casos que el consentimiento fue dado o autorizado por el titular de la p…
+
+— Justificación (según modelo):
+«Los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a 13 años.» (Artículo 8, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (modelo, preview):
+   …nsiderará lícito si el consentimiento lo dio o autorizó el titular de la patria potestad o tutela sobre el niño, y solo en la medida en que se dio o autorizó.
+
+[[Los Estados miembros podrán establecer por ley una edad inferior a tales fines, siempre que esta no sea inferior a 13 años.]]
+
+2. El responsable del tratamiento hará esfuerzos razonables para verificar en tales casos que el consentimiento fue dado o autorizado por el titular de la p…

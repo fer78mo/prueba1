@@ -1,0 +1,20 @@
+¿En qué artículo del Reglamento (UE) 2016/679 aparece reconocido el derecho de rectificación?
+
+A) En el artículo 12.
+B) En el artículo 16.
+C) En el artículo 18.
+D) En el artículo 20.
+
+Etiqueta: B) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«Al ejercer el derecho de rectificación reconocido en el artículo 16 del Reglamento (UE) 2016/679, el afectado deberá indicar en su solicitud a qué datos se refiere y la corrección que haya de realizarse.» (Artículo 14, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (etiqueta, preview):
+   Artículo 14. Derecho de rectificación. [[Al ejercer el derecho de rectificación reconocido en el artículo 16 del Reglamento (UE) 2016/679, el afectado deberá indicar en su solicitud a qué datos se refiere y la corrección que haya de realizarse.]] Deberá acompañar, cuando sea preciso, la documentación justificativa de la inexactitud o carácter incompleto de los datos objeto de tratamiento.
+
+— Justificación (según modelo):
+«Al ejercer el derecho de rectificación reconocido en el artículo 16 del Reglamento (UE) 2016/679, el afectado deberá indicar en su solicitud a qué datos se refiere y la corrección que haya de realizarse.» (Artículo 14, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (modelo, preview):
+   Artículo 14. Derecho de rectificación. [[Al ejercer el derecho de rectificación reconocido en el artículo 16 del Reglamento (UE) 2016/679, el afectado deberá indicar en su solicitud a qué datos se refiere y la corrección que haya de realizarse.]] Deberá acompañar, cuando sea preciso, la documentación justificativa de la inexactitud o carácter incompleto de los datos objeto de tratamiento.

@@ -1,0 +1,12 @@
+archivo,etiqueta,modelo,acuerdo,motivo
+MAD72.txt,B,A,False,desacuerdo
+MAD74.txt,C,A,False,desacuerdo
+MAD75.txt,D,A,False,desacuerdo
+MAD76.txt,C,A,False,desacuerdo
+MAD78.txt,C,B,False,desacuerdo
+MAD79.txt,C,A,False,desacuerdo
+MAD80.txt,D,A,False,desacuerdo
+MAD81.txt,D,A,False,desacuerdo
+MAD82.txt,A,A,True,ok
+MAD83.txt,B,A,False,desacuerdo
+Test-C05.txt,D,A,False,desacuerdo

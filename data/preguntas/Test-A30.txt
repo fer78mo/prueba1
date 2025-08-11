@@ -1,0 +1,8 @@
+La información básica del tratamiento de datos deberá contener, al menos:
+
+A) El motivo del tratamiento.
+B) La posibilidad de ejercer los derechos establecidos en los artículos 12 a 25 del Reglamento (UE) 2018/976.
+C) Si los datos obtenidos del afectado van a ser tratados para la elaboración de perfiles.
+D) La identidad del responsable del tratamiento y de su representante, en su caso.
+
+✅ Respuesta correcta: D)

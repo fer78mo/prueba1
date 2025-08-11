@@ -1,0 +1,8 @@
+Los datos personales serán exactos y, si fuera necesario, actualizados y se adoptarán todas las medidas razonables para que se supriman o rectifiquen sin dilación los datos personales que sean inexactos con respecto a los fines para los que se tratan. Este principio es denominado por el Reglamento (UE) 2016/679, como principio de:
+
+A) Limitación de la finalidad.
+B) Integridad y confidencialidad.
+C) Exactitud.
+D) Minimización de datos.
+
+✅ Respuesta correcta: C)

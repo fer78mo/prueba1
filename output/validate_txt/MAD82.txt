@@ -1,0 +1,20 @@
+¿Qué artículo del Título II “Principios de protección de datos” de la Ley Orgánica 3/2018, de 5 de diciembre, regula la exactitud de los datos?
+
+A) El artículo 4.
+B) El artículo 9.
+C) El artículo 8.
+D) El artículo 5.
+
+Etiqueta: A) | Modelo: A)  →  OK (coinciden)
+
+— Justificación (según etiqueta):
+«Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán exactos y, si fuere necesario, actualizados.» (Artículo 4, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (etiqueta, preview):
+   Artículo 4. Exactitud de los datos. 1. [[Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán exactos y, si fuere necesario, actualizados.]] 2. A los efectos previstos en el artículo 5.1.d) del Reglamento (UE) 2016/679, no será imputable al responsable del tratamiento, siempre que este haya adopta…
+
+— Justificación (según modelo):
+«Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán exactos y, si fuere necesario, actualizados.» (Artículo 4, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (modelo, preview):
+   Artículo 4. Exactitud de los datos. 1. [[Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán exactos y, si fuere necesario, actualizados.]] 2. A los efectos previstos en el artículo 5.1.d) del Reglamento (UE) 2016/679, no será imputable al responsable del tratamiento, siempre que este haya adopta…

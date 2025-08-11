@@ -1,0 +1,24 @@
+El responsable del tratamiento de los datos personales será responsable de que los mismos se traten en relación con el interesado de forma lícita, leal y transparente y habrá de ser capaz de demostrarlo. Esto último es denominado por el Reglamento (UE) 2016/679, como:
+
+A) Responsabilidad directa.
+B) Responsabilidad activa.
+C) Responsabilidad proactiva.
+D) Responsabilidad inmediata.
+
+Etiqueta: C) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«El responsable del tratamiento será responsable del cumplimiento de lo dispuesto en el apartado 1 y capaz de demostrarlo («responsabilidad proactiva»).» (Artículo 5, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (etiqueta, preview):
+   … contra su pérdida, destrucción o daño accidental, mediante la aplicación de medidas técnicas u organizativas apropiadas («integridad y confidencialidad»).
+
+2. [[El responsable del tratamiento será responsable del cumplimiento de lo dispuesto en el apartado 1 y capaz de demostrarlo («responsabilidad proactiva»).]]
+
+— Justificación (según modelo):
+«El responsable del tratamiento será responsable del cumplimiento de lo dispuesto en el apartado 1 y capaz de demostrarlo («responsabilidad proactiva»).» (Artículo 5, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (modelo, preview):
+   … contra su pérdida, destrucción o daño accidental, mediante la aplicación de medidas técnicas u organizativas apropiadas («integridad y confidencialidad»).
+
+2. [[El responsable del tratamiento será responsable del cumplimiento de lo dispuesto en el apartado 1 y capaz de demostrarlo («responsabilidad proactiva»).]]

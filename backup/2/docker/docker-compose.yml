@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  app-rag:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: app-rag
+    restart: unless-stopped
+    networks: [ia_ia_default]
+    volumes:
+      - /media/fernando/Proyectos/IA/RAG-juridico/data:/app/data
+      - /media/fernando/Proyectos/IA/RAG-juridico/output:/app/output
+      - /media/fernando/Proyectos/IA/RAG-juridico/config:/app/config
+    environment:
+      - QDRANT_URL=http://ia_qdrant:6333
+      - OLLAMA_URL=http://ia_ollama_1:11434
+      - LLM_MODEL=gpt-oss:20b
+      - EMB_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+      - LOG_LEVEL=INFO
+      - AUTO_INGEST_ON_START=true
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - STRICT_CITATION=true   # exige span exacto; si falla, manda a _no_resueltas
+      - API_KEY=takata
+      - USE_BM25_FUSION=true
+      - RRF_K=60
+      - FUSE_TOPK=0
+      - STRICT_LAW_GUARD=true
+      - ADAPTIVE_MINLEN=true
+      - MINLEN_SHORT=60
+      - MINLEN_LONG=90
+      - SHORT_ARTICLE_THRESHOLD=800
+    runtime: nvidia   # <— clave en docker-compose “legacy”
+networks:
+  ia_ia_default:
+    external: true
+
+# docker-compose up -d --build
+
+
+

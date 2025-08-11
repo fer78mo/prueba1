@@ -1,0 +1,25 @@
+{
+  "summary": {
+    "total": 1,
+    "por_fuente": {
+      "txt": 1
+    },
+    "citas": {
+      "con_cita": 1
+    },
+    "confianza_media": 0.999,
+    "ts": 1754910807
+  },
+  "items": [
+    {
+      "archivo": "Test-C05.txt",
+      "ok": true,
+      "motivo": null,
+      "fuente": "txt",
+      "tiene_cita": true,
+      "span_len": 240,
+      "confianza": 0.9989913105964661,
+      "tiempo_ms": 18011
+    }
+  ]
+}

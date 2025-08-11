@@ -1,0 +1,20 @@
+Cuando el afectado elija un medio de acceso distinto al que se le ofrece que suponga un coste desproporcionado:
+
+A) La solicitud será considerada excesiva, por lo que el afectado y el responsable asumirán a partes iguales el exceso de costes que la elección del afectado comporte.
+B) La solicitud al ser declarada como excesiva, no podrá realizarse.
+C) La solicitud deberá de nuevo ser formulada mediante un sistema de acceso que no suponga un coste excesivo.
+D) La solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.
+
+Etiqueta: D) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«Cuando el afectado elija un medio distinto al que se le ofrece que suponga un coste desproporcionado, la solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.» (Artículo 13, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (etiqueta, preview):
+   … considerar repetitivo el ejercicio del derecho de acceso en más de una ocasión durante el plazo de seis meses, a menos que exista causa legítima para ello. 4. [[Cuando el afectado elija un medio distinto al que se le ofrece que suponga un coste desproporcionado, la solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.]] En este caso, solo será exigible al responsable del tratamiento la satisfacción del derecho de acceso sin dilaciones indebidas.
+
+— Justificación (según modelo):
+«Cuando el afectado elija un medio distinto al que se le ofrece que suponga un coste desproporcionado, la solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.» (Artículo 13, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (modelo, preview):
+   … considerar repetitivo el ejercicio del derecho de acceso en más de una ocasión durante el plazo de seis meses, a menos que exista causa legítima para ello. 4. [[Cuando el afectado elija un medio distinto al que se le ofrece que suponga un coste desproporcionado, la solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.]] En este caso, solo será exigible al responsable del tratamiento la satisfacción del derecho de acceso sin dilaciones indebidas.

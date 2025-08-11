@@ -1,0 +1,475 @@
+{"ts": "2025-08-11T08:41:06.739333Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T08:41:06.740812Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 29, in ingest_all\n    alias = load_alias(alias_path)\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/io/alias_loader.py\", line 16, in load_alias\n    raise AliasMissingError(\"alias.txt vacío\")\napp.core.errors.AliasMissingError: alias.txt vacío"}
+{"ts": "2025-08-11T08:43:05.223421Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'data/preguntas/.gitkeep', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T08:43:05.223574Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt'}"}
+{"ts": "2025-08-11T08:43:05.223619Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'count': 2, 'moved_no_resueltas': 1}"}
+{"ts": "2025-08-11T09:13:34.635387Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:13:44.922731Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 57, in ingest_all\n    switch_alias(base, version)\n  File \"/app/app/vector/qdrant_store.py\", line 28, in switch_alias\n    qc.update_aliases(changes=ops)\n    ^^^^^^^^^^^^^^^^^\nAttributeError: 'QdrantClient' object has no attribute 'update_aliases'"}
+{"ts": "2025-08-11T09:15:18.994381Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt'}"}
+{"ts": "2025-08-11T09:15:18.994429Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'count': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:17:18.692394Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:17:28.539092Z", "lvl": "ERROR", "logger": "__main__", "msg": "auto_ingest_failed", "exc": "Traceback (most recent call last):\n  File \"/app/app/api/server.py\", line 20, in _auto_ingest\n    reindex_main([\"--all\"])\n  File \"/app/app/cli/ingest.py\", line 16, in reindex_main\n    version = ingest_all(data_root)\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/app/ingest/pipeline.py\", line 57, in ingest_all\n    switch_alias(base, version)\n  File \"/app/app/vector/qdrant_store.py\", line 32, in switch_alias\n    qc.create_alias(collection_name=physical, alias_name=alias)\n    ^^^^^^^^^^^^^^^\nAttributeError: 'QdrantClient' object has no attribute 'create_alias'"}
+{"ts": "2025-08-11T09:25:27.362508Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:25:37.020588Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:37.620011Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:38.882424Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:39.647937Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470151Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470210Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092527'}"}
+{"ts": "2025-08-11T09:25:40.470327Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:25:45.283875Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:45.871355Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:46.957479Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:47.934704Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:48.766961Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092542'}"}
+{"ts": "2025-08-11T09:25:48.767055Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092542'}"}
+{"ts": "2025-08-11T09:26:22.961207Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:23.564061Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:24.710629Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:25.606632Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:26.433768Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'count': 1, 'collection': 'pdf_temas__v_20250811_092620'}"}
+{"ts": "2025-08-11T09:26:26.433869Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_092620'}"}
+{"ts": "2025-08-11T09:33:16.367546Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:33:25.942650Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:26.537267Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:27.695539Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:28.619184Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.652970Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.653081Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093316'}"}
+{"ts": "2025-08-11T09:33:29.653342Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:33:39.040203Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:39.668898Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:40.736202Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:41.598130Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:42.578730Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093336'}"}
+{"ts": "2025-08-11T09:33:42.578817Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093336'}"}
+{"ts": "2025-08-11T09:35:34.977002Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:35:44.666893Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:45.341283Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:46.539063Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:47.481465Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488427Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488511Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093534'}"}
+{"ts": "2025-08-11T09:35:48.488709Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:35:55.242310Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.8141701}"}
+{"ts": "2025-08-11T09:35:55.242388Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:38:56.071810Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:39:05.587918Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:06.264535Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:07.372192Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:08.468540Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:08.642142Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:09.313011Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:09.589345Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:09.589423Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093856'}"}
+{"ts": "2025-08-11T09:39:09.589645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T09:39:10.409592Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:11.214297Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:12.226344Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:12.226430Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_093905'}"}
+{"ts": "2025-08-11T09:39:36.672547Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9440134167671204}"}
+{"ts": "2025-08-11T09:39:36.672609Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T09:39:53.908853Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': '/tmp/tmpq9e4mtln.txt', 'fuente': 'txt', 'conf': 0.7}"}
+{"ts": "2025-08-11T09:57:18.385798Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T09:57:28.210801Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:28.489009Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:28.830856Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.150115Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991017Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991101Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_095718'}"}
+{"ts": "2025-08-11T09:57:29.991295Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:02:19.384035Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:19.659156Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:20.003156Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:20.315836Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:21.143560Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100216'}"}
+{"ts": "2025-08-11T10:02:21.143655Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100216'}"}
+{"ts": "2025-08-11T10:03:33.099026Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:03:42.656542Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:42.931498Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:43.282072Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:43.576253Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425310Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425411Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100333'}"}
+{"ts": "2025-08-11T10:03:44.425640Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:03:59.513855Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:03:59.513959Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:04:20.675948Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:20.951359Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:21.288855Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:21.599946Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:22.431488Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:22.431571Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_100418'}"}
+{"ts": "2025-08-11T10:04:39.014768Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:04:39.014825Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:13:49.761966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:13:59.569550Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:13:59.843119Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:00.174039Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:00.465216Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335256Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335352Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_101349'}"}
+{"ts": "2025-08-11T10:14:01.335577Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:14:50.940442Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.210494Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.539155Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:51.834219Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:52.657830Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_101448'}"}
+{"ts": "2025-08-11T10:14:52.657915Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_101448'}"}
+{"ts": "2025-08-11T10:15:23.011611Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:15:23.011670Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:32:32.158902Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:32:41.821514Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.088729Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.134357Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:42.402929Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.508279Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:42.701328Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:42.885202Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:43.174397Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:43.563825Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:43.563932Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_103232'}"}
+{"ts": "2025-08-11T10:32:43.564188Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:32:44.011305Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_103239'}"}
+{"ts": "2025-08-11T10:32:44.011388Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_103239'}"}
+{"ts": "2025-08-11T10:33:06.852622Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:33:06.852683Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T10:40:02.266805Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:40:11.776320Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.036374Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.356428Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:12.621855Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443076Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443175Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104002'}"}
+{"ts": "2025-08-11T10:40:13.443420Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:45:15.464200Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T10:45:25.096282Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:25.381151Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:25.722656Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.029716Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859423Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859519Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104515'}"}
+{"ts": "2025-08-11T10:45:26.859699Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T10:45:38.978471Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.245109Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.579517Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:39.881237Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:40.695293Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_104536'}"}
+{"ts": "2025-08-11T10:45:40.695377Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_104536'}"}
+{"ts": "2025-08-11T10:46:09.476617Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'data/preguntas/Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T10:46:09.476681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 1, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T11:03:39.991808Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:03:49.422654Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.1-2014', 'count': 73, 'collection': 'articulos__l.1-2014__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:49.689658Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'l.19-2013', 'count': 58, 'collection': 'articulos__l.19-2013__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:50.021002Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'lo.3-2018', 'count': 144, 'collection': 'articulos__lo.3-2018__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:50.328058Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_articulos', 'ley_id': 'r.e.679-2016', 'count': 99, 'collection': 'articulos__r.e.679-2016__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.164746Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingested_pdf_temas', 'chunks': 28, 'docs': 1, 'collection': 'pdf_temas__v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.164919Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_110339'}"}
+{"ts": "2025-08-11T11:03:51.165838Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:12:53.607722Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:13:02.725769Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111253'}"}
+{"ts": "2025-08-11T11:13:02.726204Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:13:27.767898Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 18011}"}
+{"ts": "2025-08-11T11:13:35.136956Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_start', 'paths': ['/app/data/articulos', '/app/data/fuentes_pdf', '/app/data/preguntas']}"}
+{"ts": "2025-08-11T11:14:27.372870Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'created'}"}
+{"ts": "2025-08-11T11:14:29.603188Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111427'}"}
+{"ts": "2025-08-11T11:14:29.603968Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:14:29.616562Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111429'}"}
+{"ts": "2025-08-11T11:15:17.120324Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:15:17.135622Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111517'}"}
+{"ts": "2025-08-11T11:15:19.527234Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/lo.3-2018/articulo-051.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:15:19.543773Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111519'}"}
+{"ts": "2025-08-11T11:15:20.620305Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3500}"}
+{"ts": "2025-08-11T11:15:20.753024Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 132}"}
+{"ts": "2025-08-11T11:16:17.978022Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/alias.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:17.997384Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111617'}"}
+{"ts": "2025-08-11T11:16:20.378321Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/lo.3-2018/articulo-051.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:20.393278Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111620'}"}
+{"ts": "2025-08-11T11:16:21.490874Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3513}"}
+{"ts": "2025-08-11T11:16:21.628129Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 136}"}
+{"ts": "2025-08-11T11:16:36.178233Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/preguntas/MAD08.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:16:36.196753Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_111636'}"}
+{"ts": "2025-08-11T11:23:27.467705Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'watch_trigger', 'path': '/app/data/articulos/alias.txt', 'type': 'opened'}"}
+{"ts": "2025-08-11T11:23:27.487625Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112327'}"}
+{"ts": "2025-08-11T11:23:32.964300Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:23:42.102701Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112332'}"}
+{"ts": "2025-08-11T11:23:42.103254Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:23:42.590323Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_112340'}"}
+{"ts": "2025-08-11T11:24:09.303384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 17214}"}
+{"ts": "2025-08-11T11:24:09.445884Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 142}"}
+{"ts": "2025-08-11T11:39:03.918341Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:39:13.103553Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_113903'}"}
+{"ts": "2025-08-11T11:39:13.104096Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:40:49.613092Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 18327}"}
+{"ts": "2025-08-11T11:40:49.747488Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 134}"}
+{"ts": "2025-08-11T11:41:33.608213Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3551}"}
+{"ts": "2025-08-11T11:41:33.750728Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 142}"}
+{"ts": "2025-08-11T11:41:33.891297Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 140}"}
+{"ts": "2025-08-11T11:41:34.029451Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 137}"}
+{"ts": "2025-08-11T11:41:34.166499Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 136}"}
+{"ts": "2025-08-11T11:41:34.309966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 143}"}
+{"ts": "2025-08-11T11:41:34.440487Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T11:41:34.573992Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T11:41:34.715130Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 140}"}
+{"ts": "2025-08-11T11:41:34.847146Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T11:41:34.977645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T11:41:35.116681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 138}"}
+{"ts": "2025-08-11T11:41:35.249672Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T11:41:35.389742Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 139}"}
+{"ts": "2025-08-11T11:41:35.532027Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 142}"}
+{"ts": "2025-08-11T11:41:35.665364Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 133}"}
+{"ts": "2025-08-11T11:41:35.790803Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T11:41:35.938017Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 147}"}
+{"ts": "2025-08-11T11:46:14.378590Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T11:46:23.250192Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_114614'}"}
+{"ts": "2025-08-11T11:46:23.250641Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T11:50:13.005539Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 17423}"}
+{"ts": "2025-08-11T11:50:13.150412Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 144}"}
+{"ts": "2025-08-11T11:50:13.307022Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 156}"}
+{"ts": "2025-08-11T11:50:13.433788Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 126}"}
+{"ts": "2025-08-11T11:50:13.573415Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 139}"}
+{"ts": "2025-08-11T11:50:13.711608Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 138}"}
+{"ts": "2025-08-11T11:50:13.848274Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 136}"}
+{"ts": "2025-08-11T11:50:13.998643Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 150}"}
+{"ts": "2025-08-11T11:50:14.140928Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 142}"}
+{"ts": "2025-08-11T11:50:14.270020Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 128}"}
+{"ts": "2025-08-11T11:50:14.403774Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T11:50:14.540359Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 136}"}
+{"ts": "2025-08-11T11:50:14.684768Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 144}"}
+{"ts": "2025-08-11T11:50:14.817868Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T11:50:14.963426Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 145}"}
+{"ts": "2025-08-11T11:50:15.094203Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 130}"}
+{"ts": "2025-08-11T11:50:15.229421Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 135}"}
+{"ts": "2025-08-11T11:50:15.367033Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 137}"}
+{"ts": "2025-08-11T12:45:50.553543Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_124548'}"}
+{"ts": "2025-08-11T12:45:59.178036Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3382}"}
+{"ts": "2025-08-11T12:45:59.314156Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 135}"}
+{"ts": "2025-08-11T12:45:59.451903Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 137}"}
+{"ts": "2025-08-11T12:45:59.582195Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 130}"}
+{"ts": "2025-08-11T12:45:59.709593Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 127}"}
+{"ts": "2025-08-11T12:45:59.851624Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 141}"}
+{"ts": "2025-08-11T12:45:59.981392Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:46:00.117291Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 135}"}
+{"ts": "2025-08-11T12:46:00.258416Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 140}"}
+{"ts": "2025-08-11T12:46:00.402858Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 144}"}
+{"ts": "2025-08-11T12:46:00.536056Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:46:00.672681Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 136}"}
+{"ts": "2025-08-11T12:46:00.798693Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 125}"}
+{"ts": "2025-08-11T12:46:00.931672Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 132}"}
+{"ts": "2025-08-11T12:46:01.077734Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 145}"}
+{"ts": "2025-08-11T12:46:01.216037Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 138}"}
+{"ts": "2025-08-11T12:46:01.341352Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T12:46:01.478226Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 136}"}
+{"ts": "2025-08-11T12:47:17.668427Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 3448}"}
+{"ts": "2025-08-11T12:47:17.802172Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:17.946447Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 144}"}
+{"ts": "2025-08-11T12:47:18.081362Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 134}"}
+{"ts": "2025-08-11T12:47:18.216678Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 135}"}
+{"ts": "2025-08-11T12:47:18.350677Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:18.476922Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:18.610808Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 133}"}
+{"ts": "2025-08-11T12:47:18.752058Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 141}"}
+{"ts": "2025-08-11T12:47:18.883664Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:19.009892Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:19.153615Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 143}"}
+{"ts": "2025-08-11T12:47:19.283014Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:19.408685Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 125}"}
+{"ts": "2025-08-11T12:47:19.541057Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 132}"}
+{"ts": "2025-08-11T12:47:19.667410Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 126}"}
+{"ts": "2025-08-11T12:47:19.792954Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 125}"}
+{"ts": "2025-08-11T12:47:19.923757Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 130}"}
+{"ts": "2025-08-11T12:47:55.580221Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD08.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9998132586479187, 'ms': 4053}"}
+{"ts": "2025-08-11T12:47:55.722408Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD104.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9995816349983215, 'ms': 141}"}
+{"ts": "2025-08-11T12:47:55.861429Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD105.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9994019269943237, 'ms': 138}"}
+{"ts": "2025-08-11T12:47:55.989165Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD106.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9999659061431885, 'ms': 127}"}
+{"ts": "2025-08-11T12:47:56.128975Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD107.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9978300929069519, 'ms': 139}"}
+{"ts": "2025-08-11T12:47:56.263775Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD108.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 134}"}
+{"ts": "2025-08-11T12:47:56.393119Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD109.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:56.524800Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD11.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:56.678939Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD110.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9923223853111267, 'ms': 153}"}
+{"ts": "2025-08-11T12:47:56.814145Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD111.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 135}"}
+{"ts": "2025-08-11T12:47:56.952849Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD112.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 138}"}
+{"ts": "2025-08-11T12:47:57.090639Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD113.txt', 'ok': False, 'fuente': '?', 'cita': False, 'conf': 0.0, 'ms': 137}"}
+{"ts": "2025-08-11T12:47:57.219109Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD114.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 128}"}
+{"ts": "2025-08-11T12:47:57.349874Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD115.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.72, 'ms': 130}"}
+{"ts": "2025-08-11T12:47:57.481704Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD116.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9938876032829285, 'ms': 131}"}
+{"ts": "2025-08-11T12:47:57.611304Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD117.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.999955415725708, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:57.741030Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/MAD118.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.995389461517334, 'ms': 129}"}
+{"ts": "2025-08-11T12:47:57.884654Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'eval_item', 'file': 'data/preguntas/Test-C05.txt', 'ok': True, 'fuente': 'txt', 'cita': True, 'conf': 0.9989913105964661, 'ms': 143}"}
+{"ts": "2025-08-11T12:51:01.439331Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T12:51:01.571310Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T12:51:01.720608Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T12:51:01.854286Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T12:51:01.996428Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T12:51:02.142445Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.280731Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.280870Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T12:51:02.417421Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T12:51:02.563562Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.700981Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:02.844104Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T12:51:02.844294Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T12:51:02.999279Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T12:51:03.144074Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T12:51:03.289815Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T12:51:03.433894Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T12:51:03.570872Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T12:51:03.570921Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T18:51:22.797596Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T18:51:31.953114Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_185122'}"}
+{"ts": "2025-08-11T18:51:31.953681Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T18:54:28.639196Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T18:54:28.774407Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T18:54:28.927263Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T18:54:29.073280Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T18:54:29.220035Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T18:54:29.361174Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.512990Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.513185Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T18:54:29.647046Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T18:54:29.789821Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:29.922814Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:30.063325Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T18:54:30.063459Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T18:54:30.206441Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T18:54:30.354316Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T18:54:30.491131Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T18:54:30.644606Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T18:54:30.790522Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T18:54:30.790564Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T19:49:23.710127Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:49:34.101851Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_194923'}"}
+{"ts": "2025-08-11T19:49:34.102308Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:49:50.714230Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T19:49:50.856011Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T19:49:51.002501Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T19:49:51.142304Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T19:49:51.271406Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T19:49:51.419842Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.564008Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.564140Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T19:49:51.699614Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T19:49:51.837783Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:51.964677Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:52.098161Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T19:49:52.098270Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T19:49:52.232923Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:49:52.366928Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T19:49:52.511512Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T19:49:52.661785Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T19:49:52.801785Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T19:49:52.801835Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}
+{"ts": "2025-08-11T19:50:48.549433Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:50:57.884695Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195048'}"}
+{"ts": "2025-08-11T19:50:57.885278Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:51:25.733074Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:51:34.828753Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195125'}"}
+{"ts": "2025-08-11T19:51:34.829355Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:51:50.540623Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T19:51:50.678186Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T19:51:50.814319Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T19:51:50.945384Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T19:51:51.075604Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T19:51:51.213411Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.342172Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.473140Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T19:51:51.609322Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.739712Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:51.876815Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T19:51:52.018068Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T19:51:52.160966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T19:51:52.295923Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T19:51:52.433443Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T19:51:52.433490Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T19:55:24.693366Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:55:35.238720Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195524'}"}
+{"ts": "2025-08-11T19:55:35.239152Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:55:49.767412Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:55:59.031186Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195549'}"}
+{"ts": "2025-08-11T19:55:59.031784Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:57:16.629992Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:57:26.008226Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195716'}"}
+{"ts": "2025-08-11T19:57:26.008812Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:57:41.657606Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:57:50.655647Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195741'}"}
+{"ts": "2025-08-11T19:57:50.656168Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T19:58:55.179267Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T19:59:04.713935Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_195855'}"}
+{"ts": "2025-08-11T19:59:04.714561Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T20:01:59.370212Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T20:02:08.854547Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_200159'}"}
+{"ts": "2025-08-11T20:02:08.854998Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T20:02:25.530680Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T20:02:25.677325Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T20:02:25.818363Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T20:02:25.958145Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T20:02:26.096859Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T20:02:26.242204Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.390948Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.533571Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T20:02:26.688781Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.835617Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:26.978966Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T20:02:27.132645Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T20:02:27.291879Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T20:02:27.433673Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T20:02:27.575111Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T20:02:27.575162Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T21:01:19.599286Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:01:29.884221Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_210119'}"}
+{"ts": "2025-08-11T21:01:29.884921Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:08:35.842250Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_210833'}"}
+{"ts": "2025-08-11T21:08:51.172222Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.194230Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD08.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.249764Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.265442Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD104.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.321925Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.337484Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD105.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.389036Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.404387Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD106.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.463178Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.478635Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD107.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.529475Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.545239Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD108.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.595484Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.610257Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD109.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.667938Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.682899Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD110.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.733024Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.747487Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD111.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.804943Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.827175Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD112.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.881403Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.895994Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD115.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:51.946628Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:51.961829Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD116.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.019655Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.035116Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD117.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.086462Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.101093Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD118.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.151606Z", "lvl": "WARNING", "logger": "app.pipeline.solver", "msg": "{'event': 'search_txt_in_laws_failed', 'err': 'division by zero'}"}
+{"ts": "2025-08-11T21:08:52.166402Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'Test-C05.txt', 'reason': 'sin_evidencia'}"}
+{"ts": "2025-08-11T21:08:52.166446Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 0, 'moved_no_resueltas': 15}"}
+{"ts": "2025-08-11T21:21:55.834922Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_start'}"}
+{"ts": "2025-08-11T21:22:05.547315Z", "lvl": "INFO", "logger": "app.ingest.pipeline", "msg": "{'event': 'ingest_done', 'version': 'v_20250811_212155'}"}
+{"ts": "2025-08-11T21:22:05.547906Z", "lvl": "INFO", "logger": "app.api.server", "msg": "{'event': 'auto_ingest_done'}"}
+{"ts": "2025-08-11T21:22:08.170838Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 0, 'moved_no_resueltas': 0}"}
+{"ts": "2025-08-11T21:23:32.964656Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD08.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9998132586479187}"}
+{"ts": "2025-08-11T21:23:33.098440Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD104.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9995816349983215}"}
+{"ts": "2025-08-11T21:23:33.230741Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD105.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9994019269943237}"}
+{"ts": "2025-08-11T21:23:33.365024Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD106.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9999659061431885}"}
+{"ts": "2025-08-11T21:23:33.502828Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD107.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9978300929069519}"}
+{"ts": "2025-08-11T21:23:33.644011Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD108.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9963458180427551}"}
+{"ts": "2025-08-11T21:23:33.782974Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD109.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:33.783137Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD11.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:23:33.916589Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD110.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9923223853111267}"}
+{"ts": "2025-08-11T21:23:34.060258Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD111.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.190614Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD112.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.323275Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD113.txt', 'reason': 'cita_no_encontrada'}"}
+{"ts": "2025-08-11T21:23:34.323422Z", "lvl": "WARNING", "logger": "__main__", "msg": "{'event': 'moved_no_resuelta', 'file': 'MAD114.txt', 'reason': 'formato_invalido'}"}
+{"ts": "2025-08-11T21:23:34.471473Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD115.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.72}"}
+{"ts": "2025-08-11T21:23:34.607565Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD116.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9938876032829285}"}
+{"ts": "2025-08-11T21:23:34.744148Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD117.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.999955415725708}"}
+{"ts": "2025-08-11T21:23:34.882575Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'MAD118.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.995389461517334}"}
+{"ts": "2025-08-11T21:23:35.012243Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_item_ok', 'file': 'Test-C05.txt', 'modo': 'enunciado', 'fuente': 'txt', 'conf': 0.9989913105964661}"}
+{"ts": "2025-08-11T21:23:35.012299Z", "lvl": "INFO", "logger": "__main__", "msg": "{'event': 'batch_done', 'ok': 15, 'moved_no_resueltas': 3}"}

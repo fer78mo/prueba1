@@ -1,0 +1,19 @@
+El deber de confidencialidad y de secreto profesional de los responsables y encargados del tratamiento de datos:
+
+OPCIONES:
+A) Se mantendrán hasta diez años después de que finalice la relación del obligado con el responsable o encargado del tratamiento.
+B) Se mantendrán hasta que finalice la relación del obligado con el responsable o encargado del tratamiento.
+C) Se mantendrán aun cuando hubiese finalizado la relación del obligado con el responsable o encargado del tratamiento.
+D) Se mantendrán hasta un año después de que finalice la relación del obligado con el responsable o encargado del tratamiento.
+
+✅ Respuesta correcta: C)
+
+JUSTIFICACIÓN:
+
+✅ Respuesta correcta según el modelo: C)
+
+«Las obligaciones establecidas en los apartados anteriores se mantendrán aun cuando hubiese finalizado la relación del obligado con el responsable o encargado del tratamiento.» (Artículo 5, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+---
+Fragmento con resaltado (preview):
+… La obligación general señalada en el apartado anterior será complementaria de los deberes de secreto profesional de conformidad con su normativa aplicable. 3. [[Las obligaciones establecidas en los apartados anteriores se mantendrán aun cuando hubiese finalizado la relación del obligado con el responsable o encargado del tratamiento.]]

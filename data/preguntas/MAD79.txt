@@ -1,0 +1,8 @@
+Según el artículo 18 del Reglamento General de Protección de Datos (RGPD) 2016/679, de 27 de abril, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, el interesado tendrá derecho a obtener del responsable del tratamiento la limitación del tratamiento de los datos cuando se cumpla alguna de las condiciones siguientes:
+
+A) Los datos personales ya no sean necesarios en relación con los fines para los que fueron recogidos o tratados de otro modo.
+B) El interesado retire el consentimiento en que se basa el tratamiento, y este no se base en otro fundamento jurídico.
+C) El responsable ya no necesite los datos personales para los fines del tratamiento, pero el interesado los necesite para la formulación, el ejercicio o la defensa de reclamaciones.
+D) Los datos personales hayan sido tratados ilícitamente.
+
+✅ Respuesta correcta: C)

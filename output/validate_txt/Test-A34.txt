@@ -1,0 +1,20 @@
+En cuanto a la limitación del tratamiento, el hecho de que el tratamiento de los datos personales esté limitado debe constar claramente:
+
+A) Por la autoridad autonómica de protección de datos competente.
+B) En el registro de actividades de tratamiento.
+C) En los sistemas de información del responsable.
+D) En el Sistema de registros administrativos.
+
+Etiqueta: C) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«El hecho de que el tratamiento de los datos personales esté limitado debe constar claramente en los sistemas de información del responsable.» (Artículo 16, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (etiqueta, preview):
+   …ión del tratamiento. 1. El derecho a la limitación del tratamiento se ejercerá de acuerdo con lo establecido en el artículo 18 del Reglamento (UE) 2016/679. 2. [[El hecho de que el tratamiento de los datos personales esté limitado debe constar claramente en los sistemas de información del responsable.]]
+
+— Justificación (según modelo):
+«El hecho de que el tratamiento de los datos personales esté limitado debe constar claramente en los sistemas de información del responsable.» (Artículo 16, Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.)
+
+   · Fragmento (modelo, preview):
+   …ión del tratamiento. 1. El derecho a la limitación del tratamiento se ejercerá de acuerdo con lo establecido en el artículo 18 del Reglamento (UE) 2016/679. 2. [[El hecho de que el tratamiento de los datos personales esté limitado debe constar claramente en los sistemas de información del responsable.]]

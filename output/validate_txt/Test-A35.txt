@@ -1,0 +1,32 @@
+¿Qué derecho ha venido a sustituir y ampliar el derecho de cancelación de la LO 15/1999, de 5 de diciembre, de protección de datos personales?
+
+A) El derecho de rectificación.
+B) El derecho de supresión.
+C) El derecho de anulación.
+D) El derecho al borrado de datos.
+
+Etiqueta: B) | Modelo: A)  →  CONFLICTO (no coinciden)
+
+— Justificación (según etiqueta):
+«El interesado tendrá derecho a obtener sin dilación indebida del responsable del tratamiento la supresión de los datos personales que le conciernan, el cual estará obligado a suprimir sin dilación indebida los datos personales cuando concurra alguna de las circunstancias siguientes:» (Artículo 17, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (etiqueta, preview):
+   Artículo 17. Derecho de supresión («el derecho al olvido»).
+
+1. [[El interesado tendrá derecho a obtener sin dilación indebida del responsable del tratamiento la supresión de los datos personales que le conciernan, el cual estará obligado a suprimir sin dilación indebida los datos personales cuando concurra alguna de las circunstancias siguientes:]]
+
+a) los datos personales ya no sean necesarios en relación con los fines para los que fueron recogidos o tratados de otro modo;
+
+b) el interesado retire el c…
+
+— Justificación (según modelo):
+«El interesado tendrá derecho a obtener sin dilación indebida del responsable del tratamiento la supresión de los datos personales que le conciernan, el cual estará obligado a suprimir sin dilación indebida los datos personales cuando concurra alguna de las circunstancias siguientes:» (Artículo 17, Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).)
+
+   · Fragmento (modelo, preview):
+   Artículo 17. Derecho de supresión («el derecho al olvido»).
+
+1. [[El interesado tendrá derecho a obtener sin dilación indebida del responsable del tratamiento la supresión de los datos personales que le conciernan, el cual estará obligado a suprimir sin dilación indebida los datos personales cuando concurra alguna de las circunstancias siguientes:]]
+
+a) los datos personales ya no sean necesarios en relación con los fines para los que fueron recogidos o tratados de otro modo;
+
+b) el interesado retire el c…

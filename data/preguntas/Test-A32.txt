@@ -1,0 +1,8 @@
+Cuando el afectado elija un medio de acceso distinto al que se le ofrece que suponga un coste desproporcionado:
+
+A) La solicitud será considerada excesiva, por lo que el afectado y el responsable asumirán a partes iguales el exceso de costes que la elección del afectado comporte.
+B) La solicitud al ser declarada como excesiva, no podrá realizarse.
+C) La solicitud deberá de nuevo ser formulada mediante un sistema de acceso que no suponga un coste excesivo.
+D) La solicitud será considerada excesiva, por lo que dicho afectado asumirá el exceso de costes que su elección comporte.
+
+✅ Respuesta correcta: D)

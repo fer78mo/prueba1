@@ -1,0 +1,8 @@
+Cuando el tratamiento se base en el consentimiento del interesado, el responsable deberá ser capaz de demostrar que aquel consintió el tratamiento de sus datos personales. Si el consentimiento del interesado se da en el contexto de una declaración escrita que también se refiera a otros asuntos, la solicitud de consentimiento se presentará de tal forma que se distinga claramente de los demás asuntos, de forma inteligible y de fácil acceso y utilizando un lenguaje:
+
+A) Formal pero sencillo.
+B) Legible y de fácil comprensión.
+C) Claro y sencillo.
+D) De fácil comprensión y claro.
+
+✅ Respuesta correcta: C)

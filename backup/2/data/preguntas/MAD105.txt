@@ -1,0 +1,8 @@
+Conforme al artículo 5.1.d) del Reglamento (UE) 2016/679 los datos serán:
+
+A) Aproximados y, si fuere necesario, actualizados.
+B) Aproximados y, en ningún caso, actualizados.
+C) Exactos y, en ningún caso, actualizados.
+D) Exactos y, si fuere necesario, actualizados.
+
+✅ Respuesta correcta: D)

@@ -1,0 +1,8 @@
+Señala la afirmación incorrecta:
+
+A) Cuando se pretenda fundar el tratamiento de los datos en el consentimiento del afectado para una pluralidad de finalidades será preciso que conste de manera específica e Inequívoca que dicho consentimiento se otorga para todas ellas.
+B) Los responsables y encargados del tratamiento de datos, así como todas las personas que intervengan en cualquier fase de este estarán sujetas al deber de confidencialidad al que se refiere el artículo 5.1.f) del Reglamento (UE) 2016/679.
+C) El tratamiento de datos personales relativos a condenas e infracciones penales, así como a procedimientos y medidas cautelares y de seguridad conexas, para fines distintos de los de prevención, investigación, detección o enjuiciamiento de infracciones penales o de ejecución de sanciones penales, solo podrá llevarse a cabo cuando se encuentre amparado en una norma con rango de ley orgánica.
+D) El deber de secreto profesional se mantendrán aun cuando hubiese finalizado la relación del obligado con el responsable o encargado del tratamiento.
+
+✅ Respuesta correcta: C)

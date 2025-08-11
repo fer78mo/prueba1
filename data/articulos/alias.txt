@@ -1,0 +1,4 @@
+l.1-2014=Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía.
+l.19-2013=Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.
+lo.3-2018=Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
+r.e.679-2016=Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos).
