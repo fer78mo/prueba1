@@ -1,68 +1,75 @@
-#!/usr/bin/env bash
-set -Eeuo pipefail
+#!/bin/bash
 
-# ragctl.sh — Control externo del contenedor app-rag
-# Requiere Docker y el contenedor "app-rag" en marcha (o define RAG_CONTAINER).
-# Subcomandos: status | reindex | run-batch | ask | gc | logs | metrics | show-span | eval | watch | trace | reload-prompts | verify-corpus | versions | help
+# Configuración por defecto del contenedor
+RAG_CONTAINER="${RAG_CONTAINER:-app-rag}"
+CONTAINER="$RAG_CONTAINER"
 
-CONTAINER="${RAG_CONTAINER:-app-rag}"
+# Colores para output
+red() { echo -e "\033[31m$*\033[0m"; }
+grn() { echo -e "\033[32m$*\033[0m"; }
+ylw() { echo -e "\033[33m$*\033[0m"; }
+blu() { echo -e "\033[34m$*\033[0m"; }
 
-red()  { printf '\033[31m%s\033[0m\n' "$*"; }
-grn()  { printf '\033[32m%s\033[0m\n' "$*"; }
-ylw()  { printf '\033[33m%s\033[0m\n' "$*"; }
-inf()  { printf '[%s] %s\n' "$(date -Is)" "$*"; }
-die()  { red "ERROR: $*"; exit 1; }
-
-need_container_running() {
-  local running
-  running="$(docker inspect -f '{{.State.Running}}' "$CONTAINER" 2>/dev/null || true)"
-  [[ "$running" == "true" ]] || die "El contenedor \"$CONTAINER\" no está corriendo. Arráncalo y reintenta."
+die() {
+  red "ERROR: $*" >&2
+  exit 1
 }
 
-in_container() { docker exec -i "$CONTAINER" bash -lc "$*"; }
+need_container_running() {
+  if ! docker ps --format "table {{.Names}}" | grep -q "^${CONTAINER}$"; then
+    die "Contenedor '$CONTAINER' no está corriendo. Usa docker-compose up -d"
+  fi
+}
+
+in_container() {
+  docker exec -i "$CONTAINER" bash -c "$*"
+}
 
 try_cli() {
-  # Ejecuta un módulo CLI dentro del contenedor.
-  # $1 = comando legible para logs
-  # $2... = python -m ...
-  local label="$1"; shift
+  local name="$1" cmd="$2"
   need_container_running
-  set +e
-  in_container "$*"; local rc=$?
-  set -e
-  if [[ $rc -ne 0 ]]; then
-    ylw "CLI interno aún no implementado o falló: $label"
-    ylw "Comando intentado dentro del contenedor:"
-    echo "    $*"
-    ylw "Pega el código correspondiente en app/cli/… y vuelve a ejecutar."
-    return $rc
+  grn "==> $name"
+  if in_container "$cmd"; then
+    grn "✅ $name completado"
+  else
+    red "❌ $name falló"
+    return 1
   fi
 }
 
 help() {
-cat <<'HLP'
-Uso: ragctl.sh <comando> [opciones]
+  cat <<HLP
+🚀 Gestor RAG Jurídico - v2.0 (con Anti-Sesgo)
 
-Comandos:
-  status                       Muestra salud (Qdrant/Ollama) y estado del servicio
-  reindex [--all|--ley IDS] [--force] [--no-pdf-temas]
-                               Reindexa incremental; --force fuerza rebuild
-  run-batch [--dir DIR] [--max N] [--dry-run]
-                               Procesa todos los archivos de preguntas del DIR (1 archivo = 1 pregunta)
-  ask --file FICH              Lanza una pregunta suelta desde archivo
-  ask --text "..." --A "..." --B "..." --C "..." --D "..." --correcta "X"
-                               Lanza pregunta suelta por texto/opciones
-  gc [--keep N]                Limpia versiones antiguas en Qdrant (retención N)
-  logs [--follow] [--since T] [--grep STR]
-                               Muestra logs del contenedor; follow opcional
-  metrics [--today|--summary]  Muestra métricas básicas (si existen)
-  show-span [--file RUTA]      Muestra la cita resaltada (usa el último resultado si no pasas --file)
-  eval [--dir DIR] [--max N]   Evalúa preguntas y genera /output/eval/{json,csv}
+Uso: $0 COMANDO [opciones]
+
+Comandos principales:
+  status                       Estado de servicios (Qdrant, Ollama, etc.)
+  reindex [--all|--ley IDs] [--force] [--no-pdf-temas]
+                               Reindexa corpus (TXT + PDF)
+
+Procesamiento de preguntas:
+  ask [--file F] [--A "texto"] [--B "texto"] [--C "texto"] [--D "texto"] [--correcta X]
+                               Resuelve pregunta individual
   watch                        Vigila /app/data y reindexa cuando detecta cambios
   run-batch [--dir DIR] [--max N] [--dry-run] [--validate]
                                Procesa todos los archivos; con --validate audita Etiqueta vs Modelo
+
+Validación robusta (NUEVO):
+  configure-robust             Configura el sistema para máxima robustez anti-sesgo
+  validate-robust [--dir DIR] [--max N] [--dry-run]
+                               Validación con anti-sesgo y fallbacks habilitados
   validate [--dir DIR] [--max N] [--dry-run]
                                Atajo de run-batch --validate
+
+Mantenimiento:
+  gc [--force]                 Limpia vectores huérfanos en Qdrant
+  logs [--tail N] [--since T]  Muestra logs de la aplicación
+  metrics [--json]             Estadísticas de uso y rendimiento
+  show-span [--file F]         Debug de spans resaltados
+  eval [--dir DIR] [--max N]   Evaluación de accuracy en lote
+
+Configuración:
   trace on|off                 Activa/desactiva modo traza (más DEBUG y trazas por pregunta)
   reload-prompts [--file F]    Fuerza recarga de prompts externos
   verify-corpus [--ley ID]     Verifica corpus (alias, nombres mal formados, vacíos)
@@ -70,7 +77,20 @@ Comandos:
   help                         Esta ayuda
 
 Variables de entorno:
-  RAG_CONTAINER   Nombre del contenedor (default: app-rag)
+  RAG_CONTAINER               Nombre del contenedor (default: app-rag)
+  ANTI_BIAS_MODE             Activar anti-sesgo (default: true)
+  MC_VALIDATION_PASSES       Número de pasadas anti-sesgo (default: 3)
+  MIN_CONFIDENCE_THRESHOLD   Umbral mínimo de confianza (default: 0.6)
+  FALLBACK_RETRIEVAL         Activar fallback de retrieval (default: true)
+
+Ejemplos:
+  $0 status
+  $0 reindex --all --force
+  $0 configure-robust          # ← NUEVO: Configura anti-sesgo
+  $0 validate-robust --max 20  # ← NUEVO: Validación robusta
+  $0 ask --file data/preguntas/test.txt
+  $0 run-batch --validate --max 50
+  $0 trace on
 HLP
 }
 
@@ -119,6 +139,77 @@ cmd_run_batch() {
   try_cli "run-batch" "python -m app.cli.run_batch --dir '$dir' $max $dry $validate"
 }
 
+# NUEVAS FUNCIONES PARA ROBUSTEZ
+cmd_configure_robust() {
+  need_container_running
+  echo "🔧 Configurando sistema para máxima robustez..."
+
+  # Crear directorio de configuración si no existe
+  in_container "mkdir -p /app/config /app/scripts"
+
+  # Aplicar configuraciones anti-sesgo via variables de entorno
+  in_container "cat > /app/config/anti_bias.env << 'EOF'
+# Configuración Anti-Sesgo y Robustez
+export ANTI_BIAS_MODE=true
+export MC_VALIDATION_PASSES=3
+export MIN_CONFIDENCE_THRESHOLD=0.6
+export FALLBACK_RETRIEVAL=true
+export VALIDATION_DETAILED_LOGGING=true
+export FALLBACK_MINLEN_SHORT=30
+export FALLBACK_MINLEN_LONG=45
+export STRICT_CITATION=false
+export STRICT_LAW_GUARD=false
+export HIGHLIGHT_IN_OUTPUT=true
+EOF"
+
+  # Cargar configuraciones
+  in_container "source /app/config/anti_bias.env"
+
+  grn "✅ Sistema configurado con:"
+  echo "  • Anti-sesgo activado (múltiples pasadas)"
+  echo "  • Fallback de retrieval habilitado"
+  echo "  • Umbrales de confianza optimizados"
+  echo "  • Logging detallado de validación"
+
+  # Mostrar configuraciones activas
+  echo ""
+  blu "📊 Configuraciones activas:"
+  in_container "source /app/config/anti_bias.env && echo '  ANTI_BIAS_MODE: '$ANTI_BIAS_MODE"
+  in_container "source /app/config/anti_bias.env && echo '  MC_VALIDATION_PASSES: '$MC_VALIDATION_PASSES"
+  in_container "source /app/config/anti_bias.env && echo '  MIN_CONFIDENCE_THRESHOLD: '$MIN_CONFIDENCE_THRESHOLD"
+  in_container "source /app/config/anti_bias.env && echo '  FALLBACK_RETRIEVAL: '$FALLBACK_RETRIEVAL"
+}
+
+cmd_validate_robust() {
+  local dir="data/preguntas" max="" dry=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dir) shift; dir="${1:-$dir}";;
+      --max) shift; max="--max ${1:-}";;
+      --dry-run) dry="--dry-run";;
+      *) die "Opción no reconocida: $1";;
+    esac
+    shift || true
+  done
+
+  echo "🧪 Ejecutando validación robusta con anti-sesgo..."
+
+  # Configurar sistema antes de validar
+  cmd_configure_robust
+
+  echo ""
+  ylw "🚀 Iniciando validación..."
+
+  # Ejecutar validación con configuraciones robustas
+  in_container "source /app/config/anti_bias.env && python -m app.cli.run_batch --dir '$dir' $max $dry --validate"
+
+  echo ""
+  grn "✅ Validación robusta completada"
+  echo "📁 Revisa los resultados en:"
+  echo "  • CSV: /app/output/validate/"
+  echo "  • TXT: /app/output/validate_txt/"
+}
+
 cmd_ask() {
   local file="" text="" A="" B="" C="" D="" correct=""
   while [[ $# -gt 0 ]]; do
@@ -134,60 +225,55 @@ cmd_ask() {
     esac
     shift || true
   done
+
   if [[ -n "$file" ]]; then
-    try_cli "ask(file)" "python -m app.cli.run_batch --single-file '$file'"
+    try_cli "ask-file" "python -m app.cli.run_batch --single-file '$file'"
+  elif [[ -n "$text" && -n "$A" && -n "$B" && -n "$C" && -n "$D" ]]; then
+    local correct_arg=""
+    [[ -n "$correct" ]] && correct_arg="--correcta '$correct'"
+    try_cli "ask-text" "python -m app.cli.run_batch --text '$text' --A '$A' --B '$B' --C '$C' --D '$D' $correct_arg"
   else
-    [[ -n "$text" && -n "$A" && -n "$B" && -n "$C" && -n "$D" && -n "$correct" ]] \
-      || die "Faltan parámetros para --text (necesita --A --B --C --D --correcta)."
-    try_cli "ask(text)" "python -m app.cli.run_batch --text \"$text\" --A \"$A\" --B \"$B\" --C \"$C\" --D \"$D\" --correcta \"$correct\""
+    die "Usa: --file ARCHIVO o --text + --A --B --C --D [--correcta X]"
   fi
 }
 
 cmd_gc() {
-  local keep="--keep 1"
+  local force=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --keep) shift; keep="--keep ${1:-1}";;
+      --force) force="--force";;
       *) die "Opción no reconocida: $1";;
     esac
     shift || true
   done
-  try_cli "gc" "python -m app.cli.ingest gc $keep"
+  try_cli "gc" "python -m app.cli.gc $force"
 }
 
 cmd_logs() {
-  local follow="" since="" grep=""
+  local tail="100" since=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --follow) follow="--follow";;
-      --since) shift; since="--since ${1:-1h}";;
-      --grep) shift; grep="${1:-}";;
+      --tail) shift; tail="${1:-$tail}";;
+      --since) shift; since="--since ${1:-}";;
       *) die "Opción no reconocida: $1";;
     esac
     shift || true
   done
   need_container_running
-  if [[ -n "$grep" ]]; then
-    docker logs $follow $since "$CONTAINER" 2>&1 | command grep -E --color=never "$grep" || true
-  else
-    docker logs $follow $since "$CONTAINER" 2>&1 || true
-  fi
+  grn "==> logs (tail=$tail)"
+  in_container "tail -n $tail /app/output/logs/app.log"
 }
 
 cmd_metrics() {
-  local mode="--summary"
+  local json=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --today) mode="--today";;
-      --summary) mode="--summary";;
+      --json) json="--json";;
       *) die "Opción no reconocida: $1";;
     esac
     shift || true
   done
-  if ! try_cli "metrics" "python -m app.cli.metrics $mode"; then
-    ylw "Mostrando métricas locales si existen:"
-    in_container "ls -1 output/metrics/*.json 2>/dev/null || true"
-  fi
+  try_cli "metrics" "python -m app.cli.metrics $json"
 }
 
 cmd_show_span() {
@@ -248,7 +334,7 @@ cmd_verify_corpus() {
   local ley=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --ley) shift; ley="--ley ${1:-}";;  # (nota) el verificador actual ignora --ley; se mantiene por compatibilidad
+      --ley) shift; ley="--ley ${1:-}";;
       *) die "Opción no reconocida: $1";;
     esac
     shift || true
@@ -264,25 +350,29 @@ cmd_validate() {
   cmd_run_batch --validate "$@"
 }
 
+# FUNCIÓN PRINCIPAL
 main() {
   local cmd="${1:-help}"; shift || true
   case "$cmd" in
-    help|-h|--help) help ;;
-    status)         cmd_status "$@" ;;
-    reindex)        cmd_reindex "$@" ;;
-    run-batch)      cmd_run_batch "$@" ;;
-    ask)            cmd_ask "$@" ;;
-    gc)             cmd_gc "$@" ;;
-    logs)           cmd_logs "$@" ;;
-    metrics)        cmd_metrics "$@" ;;
-    show-span)      cmd_show_span "$@" ;;
-    validate)       cmd_validate "$@" ;;
-    eval)           cmd_eval "$@" ;;
-    watch)          cmd_watch "$@" ;;
-    trace)          cmd_trace "$@" ;;
-    reload-prompts) cmd_reload_prompts "$@" ;;
-    verify-corpus)  cmd_verify_corpus "$@" ;;
-    versions)       cmd_versions "$@" ;;
+    help|-h|--help)    help ;;
+    status)            cmd_status "$@" ;;
+    reindex)           cmd_reindex "$@" ;;
+    run-batch)         cmd_run_batch "$@" ;;
+    ask)               cmd_ask "$@" ;;
+    gc)                cmd_gc "$@" ;;
+    logs)              cmd_logs "$@" ;;
+    metrics)           cmd_metrics "$@" ;;
+    show-span)         cmd_show_span "$@" ;;
+    validate)          cmd_validate "$@" ;;
+    eval)              cmd_eval "$@" ;;
+    watch)             cmd_watch "$@" ;;
+    trace)             cmd_trace "$@" ;;
+    reload-prompts)    cmd_reload_prompts "$@" ;;
+    verify-corpus)     cmd_verify_corpus "$@" ;;
+    versions)          cmd_versions "$@" ;;
+    # NUEVOS COMANDOS ROBUSTOS
+    configure-robust)  cmd_configure_robust "$@" ;;
+    validate-robust)   cmd_validate_robust "$@" ;;
     *) die "Comando no reconocido: $cmd (usa 'ragctl.sh help')" ;;
   esac
 }

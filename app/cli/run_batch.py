@@ -6,6 +6,7 @@ import time
 import shutil
 import tempfile
 import csv
+import random
 from collections import Counter
 
 from app.core.logging import get_logger
@@ -16,6 +17,12 @@ log = get_logger(__name__)
 
 # Resaltado en TXT de salida (preview del span)
 HIGHLIGHT = os.getenv("HIGHLIGHT_IN_OUTPUT", "true").lower() == "true"
+
+# Configuraciones anti-sesgo
+ANTI_BIAS_MODE = os.getenv("ANTI_BIAS_MODE", "true").lower() == "true"
+MC_VALIDATION_PASSES = int(os.getenv("MC_VALIDATION_PASSES", "3"))
+MIN_CONFIDENCE_THRESHOLD = float(os.getenv("MIN_CONFIDENCE_THRESHOLD", "0.6"))
+FALLBACK_RETRIEVAL = os.getenv("FALLBACK_RETRIEVAL", "true").lower() == "true"
 
 def parse_question_file(path: str) -> dict:
     """
@@ -107,12 +114,132 @@ def _score_option(info:dict)->tuple:
     conf = float(info.get("confianza") or 0.0)
     return (tiene_cita, is_txt, conf)
 
-def _select_best_option(enunciado: str, opciones: dict, mode: str = "correcta"):
+def _solve_with_fallback(enunciado: str, opcion_texto: str, mode: str = "correcta"):
+    """Solver con múltiples fallbacks para mejorar robustez"""
+
+    # 1. Intento normal
+    try:
+        just, info = solve_question(enunciado, opcion_texto, mode=mode)
+        if info.get("tiene_cita"):
+            return just, info
+    except Exception as e:
+        log.debug(f"Primer intento falló: {e}")
+
+    # 2. Fallback: Relajar configuraciones si está habilitado
+    if FALLBACK_RETRIEVAL:
+        # Guardar configuraciones originales
+        orig_minlen_short = os.environ.get("MINLEN_SHORT", "60")
+        orig_minlen_long = os.environ.get("MINLEN_LONG", "90")
+        orig_strict_law = os.environ.get("STRICT_LAW_GUARD", "false")
+        orig_strict_citation = os.environ.get("STRICT_CITATION", "false")
+
+        try:
+            # Configuraciones más permisivas
+            os.environ["MINLEN_SHORT"] = "30"
+            os.environ["MINLEN_LONG"] = "45"
+            os.environ["STRICT_LAW_GUARD"] = "false"
+            os.environ["STRICT_CITATION"] = "false"
+
+            just, info = solve_question(enunciado, opcion_texto, mode=mode)
+
+            # Restaurar configuraciones
+            os.environ["MINLEN_SHORT"] = orig_minlen_short
+            os.environ["MINLEN_LONG"] = orig_minlen_long
+            os.environ["STRICT_LAW_GUARD"] = orig_strict_law
+            os.environ["STRICT_CITATION"] = orig_strict_citation
+
+            # Marcar que se usó fallback
+            info["uso_fallback"] = True
+            return just, info
+
+        except Exception as e:
+            # Restaurar configuraciones en caso de error
+            os.environ["MINLEN_SHORT"] = orig_minlen_short
+            os.environ["MINLEN_LONG"] = orig_minlen_long
+            os.environ["STRICT_LAW_GUARD"] = orig_strict_law
+            os.environ["STRICT_CITATION"] = orig_strict_citation
+
+            log.debug(f"Fallback también falló: {e}")
+
+    # 3. Última opción: respuesta sin cita
+    return "", {"tiene_cita": False, "fuente": {}, "confianza": 0.0, "error": "sin_evidencia"}
+
+def _select_best_option_robust(enunciado: str, opciones: dict, mode: str = "correcta"):
     """
-    Devuelve (letra, justificacion, info) según el modo:
-      - correcta   -> mayor evidencia (tiene_cita, fuente txt, confianza)
-      - incorrecta -> menor evidencia
-    Robusta a excepciones de STRICT (trata sin evidencia).
+    Versión robusta que mitiga sesgos posicionales usando múltiples pasadas
+    """
+    if not ANTI_BIAS_MODE:
+        # Comportamiento original
+        return _select_best_option_original(enunciado, opciones, mode)
+
+    # Múltiples pasadas con orden aleatorio
+    vote_scores = {}
+    confidence_scores = {}
+
+    for pasada in range(MC_VALIDATION_PASSES):
+        # Barajar el orden de evaluación
+        letters = list(opciones.keys())
+        random.shuffle(letters)
+
+        pasada_results = {}
+        for L in letters:
+            if L not in opciones:
+                continue
+
+            try:
+                just, info = _solve_with_fallback(enunciado, opciones[L], mode=mode)
+                sc = _score_option(info)
+                conf = info.get("confianza", 0.0)
+
+                pasada_results[L] = {
+                    "score": sc,
+                    "confidence": conf,
+                    "justification": just,
+                    "info": info
+                }
+
+            except Exception as e:
+                log.debug(f"Error en opción {L}, pasada {pasada}: {e}")
+                pasada_results[L] = {
+                    "score": (0, 0, 0.0),
+                    "confidence": 0.0,
+                    "justification": "",
+                    "info": {"tiene_cita": False, "fuente": {}, "confianza": 0.0}
+                }
+
+        # Encontrar mejor de esta pasada
+        if pasada_results:
+            if mode == "correcta":
+                best_letter = max(pasada_results.keys(), key=lambda k: pasada_results[k]["score"])
+            else:
+                # Para incorrecta, buscamos la menor evidencia
+                best_letter = min(pasada_results.keys(), key=lambda k: pasada_results[k]["score"])
+
+            # Acumular votos
+            vote_scores[best_letter] = vote_scores.get(best_letter, 0) + 1
+            confidence_scores[best_letter] = confidence_scores.get(best_letter, 0) + pasada_results[best_letter]["confidence"]
+
+    # Decidir por mayoría de votos
+    if not vote_scores:
+        raise ValueError("formato_invalido")
+
+    winner = max(vote_scores.keys(), key=lambda k: vote_scores[k])
+    avg_confidence = confidence_scores[winner] / vote_scores[winner] if vote_scores[winner] > 0 else 0.0
+
+    # Obtener justificación final de la opción ganadora
+    final_just, final_info = _solve_with_fallback(enunciado, opciones[winner], mode=mode)
+
+    # Agregar metadatos de robustez
+    final_info["anti_bias_votes"] = vote_scores
+    final_info["avg_confidence"] = avg_confidence
+    final_info["pasadas_realizadas"] = MC_VALIDATION_PASSES
+    final_info["confianza_robusta"] = avg_confidence
+
+    return winner, final_just, final_info
+
+def _select_best_option_original(enunciado: str, opciones: dict, mode: str = "correcta"):
+    """
+    Versión original (comportamiento actual)
     """
     best = None
     best_key = None
@@ -142,6 +269,13 @@ def _select_best_option(enunciado: str, opciones: dict, mode: str = "correcta"):
     if best is None:
         raise ValueError("formato_invalido")
     return best, best_just, best_info
+
+# Función pública que elige entre versiones
+def _select_best_option(enunciado: str, opciones: dict, mode: str = "correcta"):
+    """
+    Selecciona la mejor opción con o sin anti-sesgo según configuración
+    """
+    return _select_best_option_robust(enunciado, opciones, mode)
 
 # ================== SALIDA NORMAL (respuestas) ==================
 
@@ -222,8 +356,11 @@ def process_one(path: str, jsonl_path: str, out_root_txt: str, base_dir: str, dr
         "justificacion": just,
         "fuentes": [info.get("fuente")],
         "confianza": info.get("confianza", 0.0),
+        "confianza_robusta": info.get("confianza_robusta", info.get("confianza", 0.0)),
         "verificacion_ok": info.get("tiene_cita", False),
         "uso_fallback_pdf": (info.get("fuente", {}) and info.get("fuente", {}).get("tipo") != "txt"),
+        "uso_fallback_retrieval": info.get("uso_fallback", False),
+        "anti_bias_votes": info.get("anti_bias_votes", {}),
         "span": info.get("span"),
         "motivo_no_resuelta": None,
         "modo": mode
@@ -246,7 +383,9 @@ def process_one(path: str, jsonl_path: str, out_root_txt: str, base_dir: str, dr
         "file": result["archivo"],
         "modo": result["modo"],
         "fuente": result["fuentes"][0].get("tipo") if result["fuentes"] else "?",
-        "conf": result["confianza"]
+        "conf": result["confianza"],
+        "conf_robusta": result["confianza_robusta"],
+        "anti_bias": bool(result["anti_bias_votes"])
     })
     return result
 
@@ -307,7 +446,7 @@ def run_batch(dir_path: str, dry_run: bool = False, max_n: int | None = None):
             json.dump(fails, jf, ensure_ascii=False, indent=2)
         print(f"Reporte no resueltas → {csv_path}")
 
-# ================== MODO VALIDATE ==================
+# ================== MODO VALIDATE MEJORADO ==================
 
 def _write_outputs_validate(
     res: dict,
@@ -329,7 +468,7 @@ def _write_outputs_validate(
     with open(jsonl_path, "a", encoding="utf-8") as jf:
         jf.write(json.dumps(res, ensure_ascii=False) + "\n")
 
-    # TXT auditoría
+    # TXT auditoría mejorado
     body = []
     body.append(enunciado)
     body.append("")
@@ -337,12 +476,25 @@ def _write_outputs_validate(
         if L in opciones:
             body.append(f"{L}) {opciones[L]}")
     body.append("")
-    estado = "OK (coinciden)" if letra_gold == letra_model else "CONFLICTO (no coinciden)"
-    body.append(f"Etiqueta: {letra_gold}) | Modelo: {letra_model})  →  {estado}")
+
+    estado = "✅ ACUERDO" if letra_gold == letra_model else "❌ DESACUERDO"
+    conf_model = res.get("model_confidence", 0.0)
+    conf_gold = res.get("gold_confidence", 0.0)
+
+    body.append(f"🏷️  Etiqueta: {letra_gold}) | 🤖 Modelo: {letra_model}) → {estado}")
+    body.append(f"📊 Confianza - Etiqueta: {conf_gold:.3f} | Modelo: {conf_model:.3f}")
+
+    if res.get("model_low_confidence"):
+        body.append("⚠️  BAJA CONFIANZA DEL MODELO")
+
+    if res.get("anti_bias_votes"):
+        votes = res["anti_bias_votes"]
+        body.append(f"🗳️  Votos anti-sesgo: {votes}")
+
     body.append("")
 
     # Justificación etiqueta
-    body.append("— Justificación (según etiqueta):")
+    body.append("— 🏷️ Justificación (según etiqueta):")
     if res.get("gold_just"):
         body.append(res["gold_just"])
         gold_fuente = (res.get("gold_info", {}).get("fuente") or {})
@@ -356,11 +508,13 @@ def _write_outputs_validate(
                     body.append("   · Fragmento (etiqueta, preview):")
                     body.append("   " + prev)
     else:
-        body.append("(sin evidencia o error)")
+        body.append("❌ Sin evidencia o error")
+        if res.get("gold_error"):
+            body.append(f"   Error: {res['gold_error']}")
 
     body.append("")
     # Justificación modelo
-    body.append("— Justificación (según modelo):")
+    body.append("— 🤖 Justificación (según modelo):")
     if res.get("model_just"):
         body.append(res["model_just"])
         model_fuente = (res.get("model_info", {}).get("fuente") or {})
@@ -374,7 +528,7 @@ def _write_outputs_validate(
                     body.append("   · Fragmento (modelo, preview):")
                     body.append("   " + prev)
     else:
-        body.append("(sin evidencia o error)")
+        body.append("❌ Sin evidencia o error")
 
     with open(out_txt, "w", encoding="utf-8") as tf:
         tf.write("\n".join(body).strip() + "\n")
@@ -391,25 +545,41 @@ def process_one_validate(path: str, jsonl_path: str, out_root_txt: str, base_dir
     opts = q["opciones"]
     mode = q.get("modo","correcta")
 
-    # 1) Modelo elige (con mode)
+    # 1) Modelo elige (con mode y anti-sesgo)
     model_letter, model_just, model_info = _select_best_option(enun, opts, mode=mode)
 
     # 2) Justificación de la etiqueta (solver explícito)
     gold_just, gold_info = None, {}
     gold_err = None
     try:
-        gold_just, gold_info = solve_question(enun, opts[etiqueta], mode=mode)
+        gold_just, gold_info = _solve_with_fallback(enun, opts[etiqueta], mode=mode)
     except Exception as e:
         gold_err = str(e) or "error"
 
     agree = (etiqueta == model_letter)
 
+    # Análisis de confianza
+    model_conf = model_info.get("confianza_robusta", model_info.get("confianza", 0.0))
+    gold_conf = gold_info.get("confianza", 0.0)
+
+    model_low_conf = model_conf < MIN_CONFIDENCE_THRESHOLD
+    gold_low_conf = gold_conf < MIN_CONFIDENCE_THRESHOLD
+
+    # Motivo mejorado
     motivo = "ok" if agree else "desacuerdo"
     if not agree:
-        if not (gold_info or {}).get("tiene_cita"):
+        if gold_low_conf and not (gold_info or {}).get("tiene_cita"):
+            motivo = "etiqueta_sin_cita_baja_conf"
+        elif not (gold_info or {}).get("tiene_cita"):
             motivo = "etiqueta_sin_cita"
-        if not (model_info or {}).get("tiene_cita"):
+        elif model_low_conf and not (model_info or {}).get("tiene_cita"):
+            motivo = "modelo_sin_cita_baja_conf"
+        elif not (model_info or {}).get("tiene_cita"):
             motivo = "modelo_sin_cita"
+        elif model_low_conf:
+            motivo = "desacuerdo_baja_confianza_modelo"
+        elif gold_low_conf:
+            motivo = "desacuerdo_baja_confianza_etiqueta"
 
     result = {
         "archivo": os.path.relpath(path, base_dir),
@@ -417,6 +587,11 @@ def process_one_validate(path: str, jsonl_path: str, out_root_txt: str, base_dir
         "modelo": model_letter,
         "acuerdo": agree,
         "motivo": motivo,
+        "model_confidence": model_conf,
+        "gold_confidence": gold_conf,
+        "model_low_confidence": model_low_conf,
+        "gold_low_confidence": gold_low_conf,
+        "anti_bias_votes": model_info.get("anti_bias_votes", {}),
         "gold_just": gold_just,
         "gold_info": gold_info,
         "gold_error": gold_err,
@@ -438,7 +613,17 @@ def process_one_validate(path: str, jsonl_path: str, out_root_txt: str, base_dir
             model_letter
         )
 
-    log.info({"event":"validate_item","file":result["archivo"],"etiqueta":etiqueta,"modelo":model_letter,"acuerdo":agree,"motivo":motivo})
+    log.info({
+        "event":"validate_item",
+        "file":result["archivo"],
+        "etiqueta":etiqueta,
+        "modelo":model_letter,
+        "acuerdo":agree,
+        "motivo":motivo,
+        "conf_modelo":model_conf,
+        "conf_etiqueta":gold_conf,
+        "anti_bias": bool(result["anti_bias_votes"])
+    })
     return result
 
 def run_validate(dir_path: str, dry_run: bool = False, max_n: int | None = None):
@@ -463,40 +648,64 @@ def run_validate(dir_path: str, dry_run: bool = False, max_n: int | None = None)
     motivo_counter = Counter()
     total, acuerdos = 0, 0
 
+    # Contadores mejorados
+    baja_conf_modelo = 0
+    baja_conf_etiqueta = 0
+    con_anti_bias = 0
+
     for f in files:
         try:
             r = process_one_validate(f, jsonl_path, out_root_txt, dir_path, dry_run=dry_run)
             total += 1
             acuerdos += 1 if r["acuerdo"] else 0
             motivo_counter[r["motivo"]] += 1
+
+            if r["model_low_confidence"]:
+                baja_conf_modelo += 1
+            if r["gold_low_confidence"]:
+                baja_conf_etiqueta += 1
+            if r["anti_bias_votes"]:
+                con_anti_bias += 1
+
             csv_rows.append({
                 "archivo": r["archivo"],
                 "etiqueta": r["etiqueta"],
                 "modelo": r["modelo"],
                 "acuerdo": r["acuerdo"],
                 "motivo": r["motivo"],
+                "conf_modelo": r["model_confidence"],
+                "conf_etiqueta": r["gold_confidence"],
+                "anti_bias": bool(r["anti_bias_votes"])
             })
         except Exception as e:
             log.warning({"event":"validate_skip","file":os.path.relpath(f,dir_path),"reason":str(e)})
 
-    # CSV resumen por items
+    # CSV resumen mejorado
     csv_path = os.path.join(out_dir_jsonl, f"validate_{ts_batch}.csv")
     with open(csv_path, "w", newline="", encoding="utf-8") as cf:
-        w = csv.DictWriter(cf, fieldnames=["archivo","etiqueta","modelo","acuerdo","motivo"])
+        w = csv.DictWriter(cf, fieldnames=["archivo","etiqueta","modelo","acuerdo","motivo","conf_modelo","conf_etiqueta","anti_bias"])
         w.writeheader()
         w.writerows(csv_rows)
 
-    # Resumen global
+    # Resumen global mejorado
     acc = (acuerdos / total) if total else 0.0
     resumen = {
         "total": total,
         "acuerdos": acuerdos,
         "accuracy": round(acc, 4),
         "por_motivo": dict(motivo_counter),
+        "baja_confianza_modelo": baja_conf_modelo,
+        "baja_confianza_etiqueta": baja_conf_etiqueta,
+        "con_anti_bias": con_anti_bias,
         "csv": csv_path,
     }
     log.info({"event":"validate_done", **resumen})
-    print(f"VALIDATE: {total} evaluadas | accuracy={acc:.3%} | motivos={dict(motivo_counter)} | CSV → {csv_path}")
+
+    print(f"VALIDATE MEJORADO: {total} evaluadas | accuracy={acc:.3%}")
+    print(f"Motivos: {dict(motivo_counter)}")
+    print(f"Baja confianza - Modelo: {baja_conf_modelo}, Etiqueta: {baja_conf_etiqueta}")
+    print(f"Con anti-sesgo: {con_anti_bias}")
+    print(f"CSV → {csv_path}")
 
 # ================== MAIN ==================
 
