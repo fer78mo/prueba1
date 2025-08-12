@@ -1,0 +1,213 @@
+version: '3.8'
+
+services:
+  # Aplicación principal RAG Jurídico
+  app-rag:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: app-rag
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - ./output:/app/output
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./scripts:/app/scripts
+      - ./tests:/app/tests
+    environment:
+      - QDRANT_HOST=ia_qdrant
+      - QDRANT_PORT=6333
+      - OLLAMA_HOST=ia_ollama_1
+      - OLLAMA_PORT=11434
+      - ANTI_BIAS_MODE=true
+      - MC_VALIDATION_PASSES=3
+      - MIN_CONFIDENCE_THRESHOLD=0.6
+      - FALLBACK_RETRIEVAL=true
+      - VALIDATION_DETAILED_LOGGING=true
+      - HIGHLIGHT_IN_OUTPUT=true
+      - LOG_LEVEL=INFO
+    depends_on:
+      - ia_qdrant
+      - ia_ollama_1
+    networks:
+      - rag_network
+    ports:
+      - "8000:8000"  # Para API REST si se implementa
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Base de datos vectorial Qdrant
+  ia_qdrant:
+    image: qdrant/qdrant:v1.9.1
+    container_name: ia_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"  # HTTP API
+      - "6334:6334"  # gRPC API
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__STORAGE__PERFORMANCE__VECTOR_SIZE=384
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/readyz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Servicio de modelos de lenguaje Ollama
+  ia_ollama_1:
+    image: ollama/ollama:latest
+    container_name: ia_ollama_1
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_ORIGINS=*
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_PORT=11434
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 120s
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+        limits:
+          memory: 8G
+
+  # Opcional: Base de datos para metadatos (PostgreSQL)
+  postgres:
+    image: postgres:15
+    container_name: rag_postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=rag_juridico
+      - POSTGRES_USER=rag_user
+      - POSTGRES_PASSWORD=rag_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./config/postgres:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rag_user -d rag_juridico"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    profiles:
+      - full  # Solo se ejecuta con profile 'full'
+
+  # Opcional: Redis para cache
+  redis:
+    image: redis:7-alpine
+    container_name: rag_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    profiles:
+      - full  # Solo se ejecuta con profile 'full'
+
+  # Opcional: Elasticsearch para búsqueda textual avanzada
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: rag_elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    profiles:
+      - full  # Solo se ejecuta con profile 'full'
+
+  # Opcional: Kibana para visualización
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    container_name: rag_kibana
+    restart: unless-stopped
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_NAME=kibana
+      - SERVER_HOST=0.0.0.0
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - rag_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5601/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+    profiles:
+      - full  # Solo se ejecuta con profile 'full'
+
+# Volúmenes persistentes
+volumes:
+  qdrant_data:
+    driver: local
+  ollama_data:
+    driver: local
+  postgres_data:
+    driver: local
+    profiles: [full]
+  redis_data:
+    driver: local
+    profiles: [full]
+  elasticsearch_data:
+    driver: local
+    profiles: [full]
+
+# Red personalizada
+networks:
+  rag_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

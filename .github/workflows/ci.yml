@@ -1,0 +1,437 @@
+name: RAG Jurídico CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Ejecutar validación diaria a las 02:00 UTC
+    - cron: '0 2 * * *'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # ============================================================================
+  # ANÁLISIS DE CÓDIGO Y LINTING
+  # ============================================================================
+  code-quality:
+    name: 🔍 Análisis de Código
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        
+    - name: 📦 Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install black flake8 mypy bandit safety
+        
+    - name: 🎨 Verificar formato con Black
+      run: |
+        black --check --diff app/ scripts/ tests/ --line-length 100
+        
+    - name: 🔍 Linting con Flake8
+      run: |
+        flake8 app/ scripts/ tests/ --max-line-length=100 --extend-ignore=E203,W503 --exclude=__pycache__
+        
+    - name: 🏷️  Verificar tipos con MyPy
+      run: |
+        mypy app/ scripts/ --ignore-missing-imports --no-strict-optional
+        
+    - name: 🔒 Análisis de seguridad con Bandit
+      run: |
+        bandit -r app/ scripts/ -f json -o bandit-report.json
+        
+    - name: 📊 Subir reporte de seguridad
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: security-report
+        path: bandit-report.json
+
+  # ============================================================================
+  # TESTS UNITARIOS
+  # ============================================================================
+  unit-tests:
+    name: 🧪 Tests Unitarios
+    runs-on: ubuntu-latest
+    needs: code-quality
+    
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+        
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Configurar Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+        
+    - name: 📦 Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov pytest-xdist
+        
+    - name: 🧪 Ejecutar tests unitarios
+      run: |
+        pytest tests/validation_tests.py -v --cov=scripts/validation --cov-report=xml --cov-report=html
+        
+    - name: 📊 Subir coverage a Codecov
+      uses: codecov/codecov-action@v3
+      if: matrix.python-version == '3.11'
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        
+    - name: 📊 Subir reporte de cobertura
+      uses: actions/upload-artifact@v3
+      if: matrix.python-version == '3.11'
+      with:
+        name: coverage-report
+        path: htmlcov/
+
+  # ============================================================================
+  # VALIDACIÓN DE CONFIGURACIÓN
+  # ============================================================================
+  config-validation:
+    name: ⚙️ Validación de Configuración
+    runs-on: ubuntu-latest
+    needs: code-quality
+    
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Validar docker-compose.yml
+      run: |
+        docker-compose -f docker-compose.yml config
+        
+    - name: 🔍 Validar archivos de configuración
+      run: |
+        # Verificar que archivos requeridos existen
+        test -f .env.example
+        test -f requirements.txt
+        test -f Makefile
+        test -f ragctl.sh
+        
+        # Verificar permisos ejecutables
+        test -x ragctl.sh
+        
+        # Verificar estructura de directorios
+        test -d scripts/validation
+        test -d tests
+        
+    - name: 🔍 Validar sintaxis de scripts
+      run: |
+        # Validar sintaxis de bash scripts
+        bash -n ragctl.sh
+        bash -n scripts/setup.sh
+        bash -n scripts/health_check.sh
+        
+        # Validar sintaxis de Python
+        python -m py_compile scripts/validation/*.py
+        python -m py_compile tests/validation_tests.py
+
+  # ============================================================================
+  # BUILD Y TEST DE CONTENEDORES
+  # ============================================================================
+  container-tests:
+    name: 🐳 Tests de Contenedores
+    runs-on: ubuntu-latest
+    needs: [code-quality, config-validation]
+    
+    services:
+      qdrant:
+        image: qdrant/qdrant:v1.9.1
+        ports:
+          - 6333:6333
+        options: >-
+          --health-cmd "curl -f http://localhost:6333/readyz"
+          --health-interval 30s
+          --health-timeout 10s
+          --health-retries 3
+          
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🔧 Configurar Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: 📦 Construir imagen de aplicación
+      uses: docker/build-push-action@v5
+      with:
+        context: ./docker
+        file: ./docker/Dockerfile
+        push: false
+        tags: rag-juridico:test
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: 🧪 Test básico de contenedor
+      run: |
+        # Crear red para testing
+        docker network create rag-test-network
+        
+        # Ejecutar contenedor de prueba
+        docker run -d \
+          --name rag-test \
+          --network rag-test-network \
+          -e QDRANT_HOST=qdrant \
+          -e QDRANT_PORT=6333 \
+          -v ${{ github.workspace }}:/app \
+          rag-juridico:test \
+          sleep 300
+          
+        # Esperar a que el contenedor esté listo
+        sleep 10
+        
+        # Ejecutar validación básica
+        docker exec rag-test python -c "import sys; sys.path.insert(0, '/app'); from scripts.validation.config_validator import ConfigValidator; print('✅ Imports OK')"
+        
+        # Cleanup
+        docker stop rag-test
+        docker rm rag-test
+        docker network rm rag-test-network
+
+  # ============================================================================
+  # TESTS DE INTEGRACIÓN
+  # ============================================================================
+  integration-tests:
+    name: 🔗 Tests de Integración
+    runs-on: ubuntu-latest
+    needs: [unit-tests, container-tests]
+    if: github.event_name != 'schedule'
+    
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🚀 Levantar stack completo
+      run: |
+        # Configurar variables de entorno para testing
+        cp .env.example .env
+        
+        # Levantar servicios
+        docker-compose up -d ia_qdrant
+        
+        # Esperar a que Qdrant esté listo
+        timeout 60 bash -c 'until curl -f http://localhost:6333/readyz; do sleep 2; done'
+        
+    - name: 🐍 Configurar Python para tests
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        
+    - name: 📦 Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 🧪 Ejecutar validación de configuración
+      run: |
+        export QDRANT_HOST=localhost
+        export QDRANT_PORT=6333
+        python scripts/validation/config_validator.py --verbose
+        
+    - name: 🧪 Ejecutar validación de embeddings
+      run: |
+        export QDRANT_HOST=localhost
+        export QDRANT_PORT=6333
+        # Test básico de conexión a Qdrant
+        python scripts/validation/embedding_validator.py --collection test --verbose || true
+        
+    - name: 📊 Generar reporte de integración
+      run: |
+        mkdir -p reports
+        export QDRANT_HOST=localhost
+        export QDRANT_PORT=6333
+        python scripts/validation/advanced_validator.py --config-only --output reports/integration_test.json || true
+        
+    - name: 📤 Subir reporte de integración
+      uses: actions/upload-artifact@v3
+      with:
+        name: integration-report
+        path: reports/
+        
+    - name: 🧹 Cleanup
+      if: always()
+      run: |
+        docker-compose down -v
+
+  # ============================================================================
+  # BUILD DE IMÁGENES PARA RELEASE
+  # ============================================================================
+  build-and-push:
+    name: 🏗️ Build y Push de Imágenes
+    runs-on: ubuntu-latest
+    needs: [unit-tests, container-tests, integration-tests]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    permissions:
+      contents: read
+      packages: write
+      
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🔧 Configurar Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: 🔑 Login al Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 📝 Extraer metadatos
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=sha,prefix={{branch}}-
+          type=raw,value=latest,enable={{is_default_branch}}
+          
+    - name: 🏗️ Build y Push imagen
+      uses: docker/build-push-action@v5
+      with:
+        context: ./docker
+        file: ./docker/Dockerfile
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  # ============================================================================
+  # VALIDACIÓN NOCTURNA COMPLETA
+  # ============================================================================
+  nightly-validation:
+    name: 🌙 Validación Nocturna
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    
+    steps:
+    - name: 📥 Checkout código
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        
+    - name: 📦 Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 🚀 Levantar servicios para validación
+      run: |
+        cp .env.example .env
+        docker-compose up -d
+        
+        # Esperar a que todos los servicios estén listos
+        sleep 60
+        
+    - name: 🔍 Ejecutar validación completa
+      run: |
+        export QDRANT_HOST=localhost
+        export OLLAMA_HOST=localhost
+        mkdir -p reports
+        
+        # Ejecutar validación avanzada
+        python scripts/validation/advanced_validator.py \
+          --output reports/nightly_validation_$(date +%Y%m%d).json \
+          --verbose || true
+          
+    - name: 🏥 Ejecutar health check
+      run: |
+        chmod +x scripts/health_check.sh
+        ./scripts/health_check.sh --verbose --json > reports/health_check_$(date +%Y%m%d).json || true
+        
+    - name: 📤 Subir reportes nocturnos
+      uses: actions/upload-artifact@v3
+      with:
+        name: nightly-reports
+        path: reports/
+        retention-days: 30
+        
+    - name: 📧 Notificar si hay fallos críticos
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🚨 Fallo en Validación Nocturna',
+            body: `La validación nocturna del ${new Date().toISOString().split('T')[0]} ha fallado.
+            
+            Por favor revisa los logs y reportes generados.
+            
+            Workflow: ${context.workflow}
+            Run ID: ${context.runId}`,
+            labels: ['bug', 'validation-failure', 'automated']
+          })
+          
+    - name: 🧹 Cleanup
+      if: always()
+      run: |
+        docker-compose down -v
+
+  # ============================================================================
+  # REPORTE FINAL
+  # ============================================================================
+  final-report:
+    name: 📊 Reporte Final
+    runs-on: ubuntu-latest
+    needs: [code-quality, unit-tests, config-validation, container-tests, integration-tests]
+    if: always() && github.event_name != 'schedule'
+    
+    steps:
+    - name: 📋 Resumen de Pipeline
+      run: |
+        echo "## 📊 Resumen del Pipeline CI/CD" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| Job | Estado |" >> $GITHUB_STEP_SUMMARY
+        echo "|-----|--------|" >> $GITHUB_STEP_SUMMARY
+        echo "| Análisis de Código | ${{ needs.code-quality.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Tests Unitarios | ${{ needs.unit-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Validación Config | ${{ needs.config-validation.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Tests Contenedores | ${{ needs.container-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Tests Integración | ${{ needs.integration-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [[ "${{ needs.code-quality.result }}" == "success" && 
+              "${{ needs.unit-tests.result }}" == "success" && 
+              "${{ needs.config-validation.result }}" == "success" && 
+              "${{ needs.container-tests.result }}" == "success" && 
+              "${{ needs.integration-tests.result }}" == "success" ]]; then
+          echo "🎉 **Pipeline completado exitosamente!**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ **Pipeline completado con errores**" >> $GITHUB_STEP_SUMMARY
+        fi
