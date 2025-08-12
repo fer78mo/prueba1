@@ -59,8 +59,11 @@ Validación robusta (NUEVO):
   configure-robust             Configura el sistema para máxima robustez anti-sesgo
   validate-robust [--dir DIR] [--max N] [--dry-run]
                                Validación con anti-sesgo y fallbacks habilitados
-  validate [--dir DIR] [--max N] [--dry-run]
-                               Atajo de run-batch --validate
+  validate [--dir DIR] [--max N] [--dry-run] [--advanced]
+                               Validación estándar o avanzada del sistema
+  validate-advanced [--verbose] [--config-only] [--system-only] [--embeddings-only]
+                    [--legal-only] [--collection NAME] [--output FILE] [--sample-file FILE]
+                               Sistema de validación avanzado completo
 
 Mantenimiento:
   gc [--force]                 Limpia vectores huérfanos en Qdrant
@@ -346,8 +349,59 @@ cmd_versions() {
   try_cli "versions" "python -m app.cli.ingest versions"
 }
 
+# Función de validación mejorada
 cmd_validate() {
-  cmd_run_batch --validate "$@"
+  local advanced="" dir="data/preguntas" max="" dry=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --advanced) advanced="--advanced";;
+      --dir) shift; dir="${1:-$dir}";;
+      --max) shift; max="--max ${1:-}";;
+      --dry-run) dry="--dry-run";;
+      *) # Pasar argumentos desconocidos al comando original
+         break;;
+    esac
+    shift || true
+  done
+
+  if [[ -n "$advanced" ]]; then
+    cmd_validate_advanced "$@"
+  else
+    cmd_run_batch --validate --dir "$dir" $max $dry "$@"
+  fi
+}
+
+# Nueva función de validación avanzada
+cmd_validate_advanced() {
+  local verbose="" config_only="" output="" collection="juridico" sample=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --verbose|-v) verbose="--verbose";;
+      --config-only) config_only="--config-only";;
+      --system-only) system_only="--system-only";;
+      --embeddings-only) embeddings_only="--embeddings-only";;
+      --legal-only) legal_only="--legal-only";;
+      --collection|-c) shift; collection="${1:-$collection}";;
+      --output|-o) shift; output="--output ${1:-}";;
+      --sample-file|-s) shift; sample="--sample-file ${1:-}";;
+      --quiet|-q) quiet="--quiet";;
+      *) die "Opción no reconocida para validación avanzada: $1";;
+    esac
+    shift || true
+  done
+
+  need_container_running
+  grn "🚀 Ejecutando Validación Avanzada RAG Jurídico..."
+  
+  local cmd_args="$verbose $config_only $system_only $embeddings_only $legal_only"
+  cmd_args="$cmd_args --collection $collection $output $sample $quiet"
+  
+  if in_container "cd /app && python scripts/validation/advanced_validator.py $cmd_args"; then
+    grn "✅ Validación avanzada completada"
+  else
+    red "❌ Validación avanzada falló"
+    return 1
+  fi
 }
 
 # FUNCIÓN PRINCIPAL
@@ -373,6 +427,7 @@ main() {
     # NUEVOS COMANDOS ROBUSTOS
     configure-robust)  cmd_configure_robust "$@" ;;
     validate-robust)   cmd_validate_robust "$@" ;;
+    validate-advanced) cmd_validate_advanced "$@" ;;
     *) die "Comando no reconocido: $cmd (usa 'ragctl.sh help')" ;;
   esac
 }
