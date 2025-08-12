@@ -1,0 +1,6 @@
+archivo,etiqueta,modelo,acuerdo,motivo,conf_modelo,conf_etiqueta,anti_bias
+MAD72.txt,B,A,False,desacuerdo,0.9153518080711365,0.9153518080711365,True
+MAD73.txt,D,D,True,ok,0.9880663156509399,0.9880663156509399,True
+MAD74.txt,C,D,False,desacuerdo,0.9998229146003723,0.9998229146003723,True
+MAD75.txt,D,B,False,desacuerdo,0.9994719624519348,0.72,True
+MAD76.txt,C,C,True,ok,0.9996938705444336,0.9996938705444336,True
